@@ -436,11 +436,98 @@ html.light-theme .intro-wrapper {
   
   .mockup-stage {
     order: -1;
+    width: 100%;
+  }
+
+  .mockup-card-3d {
+    max-width: 100%;
   }
   
   .intro-footer {
     flex-direction: column;
-    gap: 12px;
+    gap: 14px;
     text-align: center;
+    padding-top: 20px;
+  }
+}
+
+@media (max-width: 768px) {
+  .intro-nav {
+    flex-wrap: wrap;
+    gap: 14px;
+  }
+
+  .nav-links {
+    order: 3;
+    width: 100%;
+    justify-content: center;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .hero-headline {
+    font-size: clamp(32px, 8.5vw, 56px);
+  }
+}
+
+@media (max-width: 480px) {
+  .intro-wrapper {
+    padding: 16px 14px;
+  }
+
+  .brand-name {
+    font-size: 13px;
+  }
+
+  .status-pill span:not(.status-dot) {
+    display: none;
+  }
+
+  .status-pill {
+    padding: 8px;
+  }
+
+  .hero-subtitle-tag {
+    font-size: 10.5px;
+    letter-spacing: 0.8px;
+  }
+
+  .hero-headline {
+    font-size: clamp(28px, 8vw, 40px);
+    line-height: 1.15;
+  }
+
+  .hero-description {
+    font-size: 14px;
+    line-height: 1.6;
+  }
+
+  .hero-cta-group {
+    flex-direction: column;
+    width: 100%;
+    gap: 10px;
+  }
+
+  .btn-primary-pill,
+  .btn-secondary-pill {
+    width: 100%;
+    justify-content: center;
+    padding: 13px 20px;
+  }
+
+  .mockup-card-3d {
+    padding: 12px;
+    border-radius: 16px;
+    aspect-ratio: auto;
+  }
+
+  .mockup-screen-body {
+    padding: 14px;
+    gap: 16px;
+  }
+
+  .terminal-line {
+    font-size: 10.5px;
+    line-height: 1.6;
   }
 }

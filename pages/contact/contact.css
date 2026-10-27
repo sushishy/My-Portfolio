@@ -178,7 +178,59 @@ html.light-theme .page-wrapper {
     padding: 24px 20px;
   }
 
+  .content-container {
+    margin: 40px auto 30px auto;
+    gap: 40px;
+  }
+
   .contact-grid {
     grid-template-columns: 1fr;
+    gap: 16px;
+  }
+}
+
+@media (max-width: 640px) {
+  .page-wrapper {
+    padding: 16px 14px;
+  }
+
+  .contact-title {
+    font-size: clamp(28px, 8vw, 42px);
+  }
+
+  .contact-subtitle {
+    font-size: 14px;
+    line-height: 1.6;
+  }
+
+  .contact-channel-card {
+    padding: 20px 16px;
+    border-radius: 16px;
+    min-height: auto;
+    gap: 12px;
+  }
+
+  .channel-value {
+    font-size: clamp(18px, 5.5vw, 23px);
+    margin-top: 8px;
+    word-break: break-word;
+  }
+
+  .resume-card {
+    padding: 22px 18px;
+    border-radius: 16px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+  }
+
+  .resume-info h3 {
+    font-size: 24px;
+  }
+
+  .resume-card div:last-child,
+  .resume-card .btn-primary-pill {
+    width: 100%;
+    justify-content: center;
   }
 }

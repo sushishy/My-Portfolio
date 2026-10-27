@@ -217,8 +217,58 @@ html.light-theme .page-wrapper {
     padding: 24px 20px;
   }
 
+  .content-container {
+    margin: 40px auto 30px auto;
+    gap: 40px;
+  }
+
   .bento-card-large,
   .bento-card-medium {
     grid-column: span 12;
+  }
+}
+
+@media (max-width: 640px) {
+  .page-wrapper {
+    padding: 16px 14px;
+  }
+
+  .about-hero {
+    flex-direction: column-reverse;
+    align-items: flex-start;
+    gap: 20px;
+  }
+
+  .profile-portrait-container {
+    width: 120px;
+    height: 120px;
+  }
+
+  .profile-portrait {
+    width: 120px;
+    height: 120px;
+    border-radius: 18px;
+  }
+
+  .about-title {
+    font-size: clamp(28px, 8vw, 42px);
+  }
+
+  .about-intro-lead {
+    font-size: 15px;
+    line-height: 1.6;
+  }
+
+  .bento-card {
+    padding: 22px 18px;
+    border-radius: 16px;
+  }
+
+  .card-heading {
+    font-size: 22px;
+  }
+
+  .card-paragraph {
+    font-size: 13.5px;
   }
 }
