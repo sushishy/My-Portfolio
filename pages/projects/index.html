@@ -5,6 +5,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Projects | Raven Lacman</title>
   
+  <script>
+    if (!window.location.pathname.endsWith('/') && !window.location.pathname.endsWith('.html')) {
+      window.location.replace(window.location.pathname + '/' + window.location.search + window.location.hash);
+    }
+  </script>
+  
   <!-- 
   ================================================================================
                               GOOGLE FONTS & STYLESHEETS
@@ -47,11 +53,6 @@
       </nav>
 
       <div class="nav-actions">
-        <div class="status-pill">
-          <span class="status-dot"></span>
-          <span>AVAILABLE FOR WORK</span>
-        </div>
-
         <button id="theme-toggle-btn" class="theme-toggle" aria-label="Toggle theme">
           <span id="theme-toggle-icon">☼</span>
         </button>

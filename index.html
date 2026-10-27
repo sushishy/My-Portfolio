@@ -22,47 +22,44 @@
 
   <!-- 
   ================================================================================
-                              INTRO VIEWPORT CONTAINER
+                              TOP STICKY NAVIGATION (FROSTED GLASS)
+  ================================================================================
+  -->
+  <div class="intro-nav-wrapper">
+    <header class="intro-nav">
+      <a href="#hero" class="brand-mark">
+        <div class="brand-icon">RL</div>
+        <span class="brand-name">Raven Lacman</span>
+      </a>
+
+      <nav class="nav-links">
+        <a href="#hero" class="nav-link active">Home</a>
+        <a href="#about" class="nav-link">About</a>
+        <a href="#projects" class="nav-link">Projects</a>
+        <a href="#contact" class="nav-link">Contact</a>
+      </nav>
+
+      <div class="nav-actions">
+        <button id="theme-toggle-btn" class="theme-toggle" aria-label="Toggle theme">
+          <span id="theme-toggle-icon">☼</span>
+        </button>
+      </div>
+    </header>
+  </div>
+
+  <!-- 
+  ================================================================================
+                              MAIN SCROLLABLE PORTFOLIO CONTAINER
   ================================================================================
   -->
   <div class="intro-wrapper">
     
     <!-- 
     ================================================================================
-                                TOP NAVIGATION & CONTROLS
+                                SECTION 1: HERO & 3D TERMINAL
     ================================================================================
     -->
-    <header class="intro-nav">
-      <a href="index.html" class="brand-mark">
-        <div class="brand-icon">RL</div>
-        <span class="brand-name">Raven Lacman</span>
-      </a>
-
-      <nav class="nav-links">
-        <a href="index.html" class="nav-link active">Home</a>
-        <a href="pages/about/index.html" class="nav-link">About</a>
-        <a href="pages/projects/index.html" class="nav-link">Projects</a>
-        <a href="pages/contact/index.html" class="nav-link">Contact</a>
-      </nav>
-
-      <div class="nav-actions">
-        <div class="status-pill">
-          <span class="status-dot"></span>
-          <span>AVAILABLE FOR WORK</span>
-        </div>
-
-        <button id="theme-toggle-btn" class="theme-toggle" aria-label="Toggle theme">
-          <span id="theme-toggle-icon">☼</span>
-        </button>
-      </div>
-    </header>
-
-    <!-- 
-    ================================================================================
-                                HERO SECTION & 3D MOCKUP
-    ================================================================================
-    -->
-    <main class="intro-hero">
+    <section id="hero" class="intro-hero" style="min-height: 85vh;">
       <div class="intro-text-column">
         <div class="hero-subtitle-tag">
           <span>BSIT BUSINESS ANALYTICS &bull; ASPIRING SOFTWARE ENGINEER</span>
@@ -75,21 +72,17 @@
         </p>
 
         <div class="hero-cta-group">
-          <a href="pages/projects/index.html" class="btn-primary-pill">
+          <a href="#projects" class="btn-primary-pill">
             <span>Explore Projects</span>
             <span>&rarr;</span>
           </a>
-          <a href="pages/about/index.html" class="btn-secondary-pill">
+          <a href="#about" class="btn-secondary-pill">
             <span>About Me</span>
           </a>
         </div>
       </div>
 
-      <!-- 
-      ================================================================================
-                                3D INTERACTIVE DEVICE MOCKUP
-      ================================================================================
-      -->
+      <!-- 3D INTERACTIVE DEVICE MOCKUP -->
       <div class="mockup-stage">
         <div class="mockup-card-3d">
           <div class="mockup-inner-screen">
@@ -126,7 +119,342 @@
           </div>
         </div>
       </div>
-    </main>
+    </section>
+
+    <!-- 
+    ================================================================================
+                                SECTION 2: ABOUT RAVEN (BENTO GRID)
+    ================================================================================
+    -->
+    <section id="about" class="portfolio-section">
+      <div class="section-header-group">
+        <div class="hero-subtitle-tag">
+          <span>BIOGRAPHY &bull; PHILOSOPHY</span>
+        </div>
+        <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 20px;">
+          <h2 class="section-title">The Mindset, The Craft & The Vision</h2>
+          <div class="profile-portrait-container">
+            <img src="assets/images/raven-profile.jpg" alt="Raven D. Lacman" class="profile-portrait">
+          </div>
+        </div>
+        <p class="section-description">
+          I am Raven. Just like the bird, I operate with a quiet, observant, and lowkey nature. I believe in letting architecture speak through execution. Rather than being confined to a single technology, I adapt and master whatever stack the requirements call for.
+        </p>
+      </div>
+
+      <div class="about-bento-grid">
+        <div class="bento-card bento-card-large">
+          <div>
+            <div class="card-label">01 &bull; Engineering Identity</div>
+            <h3 class="card-heading">Building from Scratch</h3>
+            <p class="card-paragraph">
+              Whether it is database seeding engines, responsive web systems, or data pipelines, my approach is centered on clarity and architectural discipline. If a problem needs a solution, I build it from the foundation up without relying on fragile shortcuts.
+            </p>
+          </div>
+          <div class="skills-wrapper">
+            <span class="skill-chip">Systems Design</span>
+            <span class="skill-chip">Database Seeding</span>
+            <span class="skill-chip">REST APIs</span>
+            <span class="skill-chip">Modern Web</span>
+          </div>
+        </div>
+
+        <div class="bento-card bento-card-medium">
+          <div>
+            <div class="card-label">02 &bull; Education & Institution</div>
+            <h3 class="card-heading">BSIT Analytics</h3>
+            <p class="card-paragraph">
+              3rd Year Bachelor of Science in Information Technology, specializing in <strong>Business Analytics</strong> at <strong>SEAIT</strong> (South East Asian Institute of Technology).
+            </p>
+          </div>
+          <div style="font-family: var(--font-mono); font-size: 11px; color: var(--text-secondary); margin-top: 16px;">
+            TUPI, SOUTH COTABATO &bull; 2026
+          </div>
+        </div>
+
+        <div class="bento-card bento-card-medium">
+          <div>
+            <div class="card-label">03 &bull; Open Source Milestone</div>
+            <h3 class="card-heading">GitHub YOLO</h3>
+            <p class="card-paragraph">
+              Active explorer on GitHub, contributing to repositories, pushing production code, and embracing the YOLO spirit of shipping fearlessly and learning continuously.
+            </p>
+          </div>
+          <div style="font-family: var(--font-mono); font-size: 11px; color: var(--accent-color); margin-top: 16px;">
+            &star; GITHUB BADGE UNLOCKED
+          </div>
+        </div>
+
+        <div class="bento-card bento-card-large">
+          <div>
+            <div class="card-label">04 &bull; Multi-Stack Capabilities</div>
+            <h3 class="card-heading">Versatile Technology Stack</h3>
+            <p class="card-paragraph">
+              "Whatever the requirements demand, that is my language." Comfortable traversing backend infrastructure, analytical querying, and sleek frontend animation.
+            </p>
+          </div>
+          <div class="skills-wrapper">
+            <span class="skill-chip">PHP (WAMP / LAMP)</span>
+            <span class="skill-chip">Python</span>
+            <span class="skill-chip">SQL / MySQL</span>
+            <span class="skill-chip">JavaScript / TypeScript</span>
+            <span class="skill-chip">Node.js / Express</span>
+            <span class="skill-chip">React / Vite</span>
+            <span class="skill-chip">Anime.js</span>
+            <span class="skill-chip">Flutter</span>
+            <span class="skill-chip">Git & GitHub</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 
+    ================================================================================
+                                SECTION 3: FEATURED PROJECTS & SKELETON LOADERS
+    ================================================================================
+    -->
+    <section id="projects" class="portfolio-section">
+      <div class="section-header-group">
+        <div class="hero-subtitle-tag">
+          <span>ENGINEERING &bull; ANALYTICS ARCHIVE</span>
+        </div>
+        <h2 class="section-title">Featured Systems & Projects</h2>
+        <p class="section-description">
+          A curated collection of developer tools, database engines, and business analytics intelligence systems engineered from the ground up.
+        </p>
+      </div>
+
+      <div class="projects-grid">
+        <!-- PROJECT 1: VOIDLESS INJECTOR -->
+        <article class="project-card">
+          <div class="project-header">
+            <div>
+              <div class="project-number">PROJECT 01 &bull; DATABASE TOOLING</div>
+              <h3 class="project-name">Voidless Injector</h3>
+            </div>
+            <div class="project-links">
+              <a href="https://github.com/sushishy" target="_blank" rel="noopener noreferrer" class="project-link-btn">
+                <span>GitHub Source</span>
+                <span>&rarr;</span>
+              </a>
+            </div>
+          </div>
+
+          <p class="project-desc">
+            A high-performance MySQL database seeder and schema injector. Designed with a custom monochrome atmosphere design system, real-time streaming console logs, multi-table relationship generation, and automated Faker mock data pipelines.
+          </p>
+
+          <div class="skills-wrapper">
+            <span class="skill-chip">PHP</span>
+            <span class="skill-chip">MySQL</span>
+            <span class="skill-chip">Vanilla JS</span>
+            <span class="skill-chip">WAMP Architecture</span>
+            <span class="skill-chip">CSS Design System</span>
+          </div>
+        </article>
+
+        <!-- PROJECT 2: POWER BI ANALYTICS (FEATURING SHIMMER SKELETON LOADERS) -->
+        <article class="project-card">
+          <div class="project-header">
+            <div>
+              <div class="project-number">PROJECT 02 &bull; BUSINESS INTELLIGENCE</div>
+              <h3 class="project-name">Power BI Analytics Dashboard</h3>
+            </div>
+            <div class="project-links">
+              <button id="toggle-skeleton-btn" class="project-link-btn" style="cursor: pointer;">
+                <span>Toggle Skeleton View</span>
+              </button>
+            </div>
+          </div>
+
+          <p class="project-desc">
+            Interactive enterprise analytics reporting built with Microsoft Power BI. Features dynamic DAX measures, automated cross-filtering, and executive summary dashboards for business data visualization.
+          </p>
+
+          <!-- 3 SKELETON / PLACEHOLDER CARDS WITH ANIMATED SHIMMER -->
+          <div class="gallery-grid">
+            
+            <!-- SKELETON CARD 1 -->
+            <div class="skeleton-dashboard-card">
+              <div class="skeleton-header-row">
+                <div class="skeleton skeleton-pill"></div>
+                <div class="skeleton skeleton-dot"></div>
+              </div>
+              <div class="skeleton skeleton-metric"></div>
+              <div class="skeleton-chart-bars">
+                <div class="skeleton skeleton-bar" style="height: 40%;"></div>
+                <div class="skeleton skeleton-bar" style="height: 70%;"></div>
+                <div class="skeleton skeleton-bar" style="height: 50%;"></div>
+                <div class="skeleton skeleton-bar" style="height: 90%;"></div>
+                <div class="skeleton skeleton-bar" style="height: 65%;"></div>
+                <div class="skeleton skeleton-bar" style="height: 85%;"></div>
+              </div>
+              <div class="skeleton skeleton-footer-line"></div>
+              <div style="font-family: var(--font-mono); font-size: 11px; color: var(--text-secondary); text-align: center;">
+                Executive KPI Dashboard [1/3]
+              </div>
+            </div>
+
+            <!-- SKELETON CARD 2 -->
+            <div class="skeleton-dashboard-card">
+              <div class="skeleton-header-row">
+                <div class="skeleton skeleton-pill"></div>
+                <div class="skeleton skeleton-dot"></div>
+              </div>
+              <div class="skeleton skeleton-metric"></div>
+              <div class="skeleton-chart-bars">
+                <div class="skeleton skeleton-bar" style="height: 80%;"></div>
+                <div class="skeleton skeleton-bar" style="height: 45%;"></div>
+                <div class="skeleton skeleton-bar" style="height: 60%;"></div>
+                <div class="skeleton skeleton-bar" style="height: 75%;"></div>
+                <div class="skeleton skeleton-bar" style="height: 95%;"></div>
+                <div class="skeleton skeleton-bar" style="height: 55%;"></div>
+              </div>
+              <div class="skeleton skeleton-footer-line"></div>
+              <div style="font-family: var(--font-mono); font-size: 11px; color: var(--text-secondary); text-align: center;">
+                Trend & Performance [2/3]
+              </div>
+            </div>
+
+            <!-- SKELETON CARD 3 -->
+            <div class="skeleton-dashboard-card">
+              <div class="skeleton-header-row">
+                <div class="skeleton skeleton-pill"></div>
+                <div class="skeleton skeleton-dot"></div>
+              </div>
+              <div class="skeleton skeleton-metric"></div>
+              <div class="skeleton-chart-bars">
+                <div class="skeleton skeleton-bar" style="height: 50%;"></div>
+                <div class="skeleton skeleton-bar" style="height: 65%;"></div>
+                <div class="skeleton skeleton-bar" style="height: 85%;"></div>
+                <div class="skeleton skeleton-bar" style="height: 40%;"></div>
+                <div class="skeleton skeleton-bar" style="height: 90%;"></div>
+                <div class="skeleton skeleton-bar" style="height: 70%;"></div>
+              </div>
+              <div class="skeleton skeleton-footer-line"></div>
+              <div style="font-family: var(--font-mono); font-size: 11px; color: var(--text-secondary); text-align: center;">
+                Segment & Territory [3/3]
+              </div>
+            </div>
+
+          </div>
+
+          <div class="skills-wrapper">
+            <span class="skill-chip">Power BI</span>
+            <span class="skill-chip">DAX Modeling</span>
+            <span class="skill-chip">Business Analytics</span>
+            <span class="skill-chip">Data Visualization</span>
+          </div>
+        </article>
+
+        <!-- PROJECT 3: EXCEL ANALYTICS SUITE (ITST111) -->
+        <article class="project-card">
+          <div class="project-header">
+            <div>
+              <div class="project-number">PROJECT 03 &bull; DATA MODELING (ITST111)</div>
+              <h3 class="project-name">Excel Analytics & Data Models (Week 5 &ndash; 8)</h3>
+            </div>
+            <div class="project-links">
+              <span class="project-link-btn" style="cursor: default; opacity: 0.8;">
+                <span>Curriculum Archive</span>
+              </span>
+            </div>
+          </div>
+
+          <p class="project-desc">
+            Structured spreadsheets and analytical datasets covering Weeks 5 through 8 of ITST111. Includes statistical formulas, data validation frameworks, lookup tables, and pivot summaries engineered for reliable business reporting.
+          </p>
+
+          <div class="skills-wrapper">
+            <span class="skill-chip">Microsoft Excel</span>
+            <span class="skill-chip">Data Processing</span>
+            <span class="skill-chip">Statistical Formulas</span>
+            <span class="skill-chip">ITST111 Coursework</span>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- 
+    ================================================================================
+                                SECTION 4: CONTACT & COLLABORATION
+    ================================================================================
+    -->
+    <section id="contact" class="portfolio-section">
+      <div class="section-header-group">
+        <div class="hero-subtitle-tag">
+          <span>DIRECT COMMUNICATION CHANNELS</span>
+        </div>
+        <h2 class="section-title">Initiate Collaboration</h2>
+        <p class="section-description">
+          Have an interesting project, software role, or freelance opportunity? Reach out directly through any of the channels below.
+        </p>
+      </div>
+
+      <div class="contact-grid">
+        <!-- EMAIL -->
+        <a href="mailto:lacmanraven@gmail.com" class="contact-channel-card">
+          <div>
+            <div class="channel-label">
+              <span>01 &bull; Direct Email</span>
+              <span class="channel-arrow">&rarr;</span>
+            </div>
+            <div class="channel-value">lacmanraven@gmail.com</div>
+          </div>
+          <div class="channel-desc">Click to compose an email directly.</div>
+        </a>
+
+        <!-- LINKEDIN -->
+        <a href="https://www.linkedin.com/in/lacman-raven-48082a441" target="_blank" rel="noopener noreferrer" class="contact-channel-card">
+          <div>
+            <div class="channel-label">
+              <span>02 &bull; Professional Network</span>
+              <span class="channel-arrow">&rarr;</span>
+            </div>
+            <div class="channel-value">LinkedIn Profile</div>
+          </div>
+          <div class="channel-desc">Connect on LinkedIn: lacman-raven-48082a441.</div>
+        </a>
+
+        <!-- GITHUB -->
+        <a href="https://github.com/sushishy" target="_blank" rel="noopener noreferrer" class="contact-channel-card">
+          <div>
+            <div class="channel-label">
+              <span>03 &bull; Source Code & Repos</span>
+              <span class="channel-arrow">&rarr;</span>
+            </div>
+            <div class="channel-value">github.com/sushishy</div>
+          </div>
+          <div class="channel-desc">Explore public repositories and source code.</div>
+        </a>
+
+        <!-- PHONE -->
+        <a href="tel:+639923953891" class="contact-channel-card">
+          <div>
+            <div class="channel-label">
+              <span>04 &bull; Direct Line</span>
+              <span class="channel-arrow">&rarr;</span>
+            </div>
+            <div class="channel-value">+63 992 395 3891</div>
+          </div>
+          <div class="channel-desc">Tupi, South Cotabato, Mindanao, Philippines.</div>
+        </a>
+      </div>
+
+      <!-- RESUME CALLOUT BANNER -->
+      <div class="resume-card">
+        <div class="resume-info">
+          <h3>Curriculum Vitae / Resume</h3>
+          <p>Comprehensive overview of technical stack, academic milestones, and engineering competencies.</p>
+        </div>
+        <div>
+          <button class="btn-primary-pill" onclick="alert('Resume PDF will be attached here soon!');">
+            <span>Download Resume</span>
+            <span>&darr;</span>
+          </button>
+        </div>
+      </div>
+    </section>
 
     <!-- 
     ================================================================================
@@ -139,9 +467,9 @@
       </div>
 
       <div class="footer-scroll-hint">
-        <a href="pages/projects/index.html" style="color: inherit; text-decoration: none; display: flex; align-items: center; gap: 8px;">
-          <span>EXPLORE REPOSITORY</span>
-          <span>&rarr;</span>
+        <a href="#hero" style="color: inherit; text-decoration: none; display: flex; align-items: center; gap: 8px;">
+          <span>BACK TO TOP</span>
+          <span>&uarr;</span>
         </a>
       </div>
 
@@ -154,7 +482,7 @@
 
   <!-- 
   ================================================================================
-                              APPLICATION ENTRYPOINT
+                              APPLICATION ENTRYPOINT & SCROLLSPY
   ================================================================================
   -->
   <script type="module" src="js/app.js"></script>
