@@ -72,6 +72,39 @@ html.light-theme .intro-wrapper {
   text-transform: uppercase;
 }
 
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background-color: var(--bg-panel);
+  border: 1px solid var(--border-color);
+  padding: 4px 6px;
+  border-radius: 9999px;
+}
+
+.nav-link {
+  font-family: var(--font-sans);
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--text-secondary);
+  text-decoration: none;
+  padding: 6px 14px;
+  border-radius: 9999px;
+  transition: all 0.2s ease;
+}
+
+.nav-link:hover {
+  color: var(--text-primary);
+  background-color: var(--bg-input);
+}
+
+.nav-link.active {
+  color: var(--text-primary);
+  background-color: var(--bg-input);
+  border: 1px solid var(--border-color);
+  font-weight: 600;
+}
+
 .nav-actions {
   display: flex;
   align-items: center;
