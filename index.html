@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfolio | Creative Technologist</title>
+  
+  <!-- 
+  ================================================================================
+                              GOOGLE FONTS & STYLESHEETS
+  ================================================================================
+  -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital,wght@0,400;1,400&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/intro.css">
+</head>
+<body>
+
+  <!-- 
+  ================================================================================
+                              INTRO VIEWPORT CONTAINER
+  ================================================================================
+  -->
+  <div class="intro-wrapper">
+    
+    <!-- 
+    ================================================================================
+                                TOP NAVIGATION & CONTROLS
+    ================================================================================
+    -->
+    <header class="intro-nav">
+      <a href="index.html" class="brand-mark">
+        <div class="brand-icon">SP</div>
+        <span class="brand-name">Portfolio Archive</span>
+      </a>
+
+      <div class="nav-actions">
+        <div class="status-pill">
+          <span class="status-dot"></span>
+          <span>AVAILABLE FOR WORK</span>
+        </div>
+
+        <button id="theme-toggle-btn" class="theme-toggle" aria-label="Toggle theme">
+          <span id="theme-toggle-icon">☼</span>
+        </button>
+      </div>
+    </header>
+
+    <!-- 
+    ================================================================================
+                                HERO SECTION & 3D MOCKUP
+    ================================================================================
+    -->
+    <main class="intro-hero">
+      <div class="intro-text-column">
+        <div class="hero-subtitle-tag">
+          <span>// CREATIVE TECHNOLOGIST & DEVELOPER</span>
+        </div>
+
+        <h1 class="hero-headline">Crafting Spatial Interfaces & Digital Experiences</h1>
+
+        <p class="hero-description">
+          Building high-performance 3D interactive web applications, bespoke developer tools, and immersive digital systems with an obsession for detail and minimalist design.
+        </p>
+
+        <div class="hero-cta-group">
+          <a href="#projects" class="btn-primary-pill">
+            <span>Explore Archive</span>
+            <span>&rarr;</span>
+          </a>
+          <a href="https://github.com/sushishy" target="_blank" rel="noopener noreferrer" class="btn-secondary-pill">
+            <span>GitHub Profile</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- 
+      ================================================================================
+                                3D INTERACTIVE DEVICE MOCKUP
+      ================================================================================
+      -->
+      <div class="mockup-stage">
+        <div class="mockup-card-3d">
+          <div class="mockup-inner-screen">
+            <div class="mockup-screen-bar">
+              <div class="window-dots">
+                <span class="window-dot"></span>
+                <span class="window-dot"></span>
+                <span class="window-dot"></span>
+              </div>
+              <span class="window-title">system-runtime.sh</span>
+              <span style="font-family: var(--font-mono); font-size: 10px; color: var(--text-secondary);">v4.5</span>
+            </div>
+
+            <div class="mockup-screen-body">
+              <div>
+                <div class="terminal-line muted">// INITIALIZING SPATIAL CANVAS</div>
+                <div class="terminal-line command">$ animejs --mode=interactive --engine=active</div>
+                <div class="terminal-line">&gt; Staggering 12 layout primitives... [OK]</div>
+                <div class="terminal-line">&gt; Loading monochrome palette tokens... [OK]</div>
+                <div class="terminal-line">&gt; 3D Parallax controller connected.</div>
+              </div>
+
+              <div style="display: flex; justify-content: space-between; align-items: flex-end;">
+                <div>
+                  <div class="terminal-line muted">LOC: MANILA, PH</div>
+                  <div class="terminal-line">STATUS: ACTIVE</div>
+                </div>
+                <div style="font-family: var(--font-mono); font-size: 20px; font-weight: 600; color: var(--accent-color);">
+                  60 FPS
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="mockup-floating-badge">
+            <span class="floating-badge-icon">&#9670;</span>
+            <span class="floating-badge-text">Voidless Edition</span>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <!-- 
+    ================================================================================
+                                BOTTOM FOOTER ARCHIVE METRICS
+    ================================================================================
+    -->
+    <footer class="intro-footer">
+      <div class="footer-meta-item">
+        <span>&copy; 2026 SUSHISHY &mdash; ALL RIGHTS RESERVED</span>
+      </div>
+
+      <div class="footer-scroll-hint">
+        <span>SCROLL TO ENTER</span>
+        <span>&darr;</span>
+      </div>
+
+      <div class="footer-meta-item">
+        <span>ATMOSPHERE: OBSIDIAN MONOCHROME</span>
+      </div>
+    </footer>
+
+  </div>
+
+  <!-- 
+  ================================================================================
+                              APPLICATION ENTRYPOINT
+  ================================================================================
+  -->
+  <script type="module" src="js/app.js"></script>
+</body>
+</html>
