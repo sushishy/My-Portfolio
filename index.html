@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Raven Lacman | Software Engineer & Creative Developer</title>
+  <title>Raven Lacman | Software Engineer & Systems Architect</title>
   
   <!-- 
   ================================================================================
@@ -12,7 +12,7 @@
   -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital,wght@0,400;1,400&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital,wght@0,400;1,400&family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
   
   <link rel="stylesheet" href="css/variables.css">
   <link rel="stylesheet" href="css/base.css">
@@ -22,7 +22,7 @@
 
   <!-- 
   ================================================================================
-                              EDITORIAL VIEWPORT WRAPPER
+                              MAIN VIEWPORT WRAPPER
   ================================================================================
   -->
   <div class="intro-wrapper">
@@ -30,83 +30,263 @@
 
       <!-- 
       ================================================================================
-                                  SECTION 1: EDITORIAL HERO
+                          QUIET TOP BAR (ANTONIO VEGA FORMAT)
       ================================================================================
       -->
-      <section id="hero" class="editorial-hero">
-        <div class="author-identity-bar">
-          <div class="author-avatar-frame">
-            <img src="assets/images/raven-profile.jpg" alt="Raven D. Lacman" class="author-avatar-img">
-          </div>
-          <div class="author-identity-meta">
-            <span class="author-name-title">Raven D. Lacman</span>
-            <span class="author-location-chip">Tupi, South Cotabato, Philippines &bull; SEAIT BSIT</span>
+      <header class="quiet-top-bar">
+        <a href="mailto:lacmanraven@gmail.com" class="quiet-link">Mail</a>
+        <a href="https://www.linkedin.com/in/lacman-raven-48082a441" target="_blank" rel="noopener noreferrer" class="quiet-link">LinkedIn</a>
+        <a href="https://github.com/sushishy" target="_blank" rel="noopener noreferrer" class="quiet-link">GitHub</a>
+      </header>
+
+      <!-- 
+      ================================================================================
+                                  SECTION 1: HERO
+      ================================================================================
+      -->
+      <section id="hero" class="antonio-hero">
+        <div class="hero-left-column">
+          <h1 class="hero-name-stacked">
+            <span>RAVEN</span>
+            <span>LACMAN</span>
+          </h1>
+
+          <p class="hero-editorial-bio">
+            3rd-year BSIT Business Analytics student and systems architect at SEAIT. Lowkey, observant, and driven by engineering clarity—architecting relational database engines, automated data pipelines, and full-stack software from the ground up.
+          </p>
+
+          <div class="hero-actions-row">
+            <a href="#work" class="btn-primary-pill">
+              <span>Selected Work</span>
+              <span>&darr;</span>
+            </a>
+            <a href="#contact" class="btn-secondary-pill">
+              <span>Initiate Contact</span>
+              <span>&rarr;</span>
+            </a>
           </div>
         </div>
 
-        <h1 class="hero-editorial-statement">
-          I architect software, databases, and digital systems from the ground up.
-        </h1>
-
-        <p class="hero-editorial-lead">
-          3rd-year BSIT student specializing in Business Analytics at SEAIT. Lowkey, observant, and driven by engineering clarity—building end-to-end web applications, automated database tools, and decision intelligence pipelines.
-        </p>
-
-        <div class="hero-actions-row">
-          <a href="#projects" class="btn-primary-pill">
-            <span>Explore Selected Work</span>
-            <span>&darr;</span>
-          </a>
-          <a href="https://github.com/sushishy" target="_blank" rel="noopener noreferrer" class="btn-secondary-pill">
-            <span>GitHub Profile</span>
-            <span>&rarr;</span>
-          </a>
+        <div class="hero-portrait-stage">
+          <div class="hero-portrait-card">
+            <img src="assets/images/raven-profile.jpg" alt="Raven D. Lacman">
+          </div>
+          <div class="hero-portrait-caption">
+            <span>RAVEN D. LACMAN</span>
+            <span>TUPI, SOUTH COTABATO / PH</span>
+          </div>
         </div>
       </section>
 
       <!-- 
       ================================================================================
-                                  SECTION 2: SELECTED WORKS
+                                  SECTION 2: ABOUT RAVEN
       ================================================================================
       -->
-      <section id="projects" class="editorial-section">
-        <div class="section-label-row">
-          <span class="section-label">Selected Systems & Case Studies</span>
-          <span class="section-index">[01 &mdash; 03]</span>
+      <section id="about" class="antonio-section">
+        <div class="section-label-header">
+          <span class="section-eyebrow">ABOUT RAVEN</span>
+          <span class="section-tag-right">[01 &mdash; FOUNDATION]</span>
         </div>
 
-        <div class="case-study-list">
+        <div class="editorial-split-grid">
+          <div class="editorial-photo-box">
+            <div class="editorial-photo-frame">
+              <img src="assets/images/seait-architecture.jpg" alt="SEAIT Campus Architecture">
+            </div>
+            <div class="editorial-photo-caption">
+              SEAIT CAMPUS &mdash; TUPI, SOUTH COTABATO / PHILIPPINES (2026)
+            </div>
+          </div>
 
-          <!-- CASE 01: VOIDLESS INJECTOR -->
-          <article class="case-study-card">
-            <div class="case-study-info">
-              <span class="case-study-tag">01 &bull; Database Engineering & Tooling</span>
-              <h2 class="case-study-title">Voidless Injector</h2>
-              <p class="case-study-desc">
-                A high-performance MySQL database seeder and schema injector. Engineered with a custom monochrome atmosphere interface, real-time streaming console logs, multi-table relationship generation, and automated Faker data pipelines.
-              </p>
-              <div class="tech-tags-list">
-                <span class="tech-tag">PHP</span>
+          <div class="editorial-text-flow">
+            <p class="editorial-lead-para">
+              It may not be obvious, but Raven operates with a quiet, observant, and lowkey nature&mdash;much like the bird. In an era where many lean on shortcuts and pre-packaged templates, he chose to study Business Analytics to understand how architectures, relational databases, and predictive systems function under the hood.
+            </p>
+            <p class="editorial-body-para">
+              Whether writing custom database seeders in PHP/MySQL, formulating DAX measures in Power BI, or building cross-platform Flutter applications, Raven insists on writing clean, scalable logic from scratch.
+            </p>
+            <div class="editorial-meta-pills">
+              <span class="tech-tag">SEAIT BSIT Analytics</span>
+              <span class="tech-tag">Obsidian Monochrome Atmosphere</span>
+              <span class="tech-tag">Architectural Discipline</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 
+      ================================================================================
+                              SECTION 3: EDITORIAL PULL-QUOTE
+      ================================================================================
+      -->
+      <section class="pull-quote-section">
+        <blockquote class="pull-quote-statement">
+          &ldquo;ARCHITECTURE OVER SHORTCUTS &mdash; BUILDING SYSTEMS WHERE DATA INTEGRITY, LOGIC, AND EXECUTION INTERSECT.&rdquo;
+        </blockquote>
+        <div class="pull-quote-sub">
+          ENGINEERING PHILOSOPHY &bull; SOUTH COTABATO, PHILIPPINES
+        </div>
+      </section>
+
+      <!-- 
+      ================================================================================
+                          SECTION 4: ATELIER & RESEARCH LAB
+      ================================================================================
+      -->
+      <section class="antonio-section">
+        <div class="section-label-header">
+          <span class="section-eyebrow">THE CRAFT</span>
+          <span class="section-tag-right">[02 &mdash; SYSTEMS LAB]</span>
+        </div>
+
+        <div class="editorial-split-grid reversed">
+          <div class="editorial-photo-box">
+            <div class="editorial-photo-frame">
+              <img src="assets/images/developer-atelier.jpg" alt="Engineering Atelier Workstation">
+            </div>
+            <div class="editorial-photo-caption">
+              ENGINEERING ATELIER &mdash; SYSTEMS & ANALYTICS PIPELINES
+            </div>
+          </div>
+
+          <div class="editorial-text-flow">
+            <p class="editorial-lead-para">
+              From early database utilities to executive business intelligence suites, Raven approaches software development as a structural discipline.
+            </p>
+            <p class="editorial-body-para">
+              He built Voidless Injector—a custom MySQL database seeder with streaming console telemetry—and engineered quantitative decision matrices in Power BI and Excel, bridging raw backend infrastructure with high-fidelity analytical reporting.
+            </p>
+            <div class="editorial-meta-pills">
+              <span class="tech-tag">Streaming Telemetry</span>
+              <span class="tech-tag">DAX Measures</span>
+              <span class="tech-tag">Automated Pipelines</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 
+      ================================================================================
+                              SECTION 5: EXPERTISE & SKILLS
+      ================================================================================
+      -->
+      <section id="skills" class="antonio-section">
+        <div class="section-label-header">
+          <span class="section-eyebrow">EXPERTISE</span>
+          <span class="section-tag-right">[03 &mdash; CAPABILITIES]</span>
+        </div>
+
+        <div class="skills-atelier-grid">
+          <div class="skills-left-sticky">
+            Skills &amp; Technical Disciplines
+          </div>
+
+          <div class="skills-right-list">
+            
+            <div class="skill-category-item">
+              <div class="skill-category-title">Database Engineering &amp; SQL Architecture</div>
+              <div class="skill-tags-flex">
                 <span class="tech-tag">MySQL</span>
                 <span class="tech-tag">WAMP Architecture</span>
-                <span class="tech-tag">Vanilla JS</span>
-                <span class="tech-tag">CSS Design System</span>
+                <span class="tech-tag">Schema Seeding</span>
+                <span class="tech-tag">Foreign Key Optimization</span>
+                <span class="tech-tag">Relational Integrity</span>
               </div>
-              <div style="margin-top: 8px;">
-                <a href="https://github.com/sushishy" target="_blank" rel="noopener noreferrer" class="btn-secondary-pill" style="display: inline-flex;">
+            </div>
+
+            <div class="skill-category-item">
+              <div class="skill-category-title">Business Intelligence &amp; Decision Modeling</div>
+              <div class="skill-tags-flex">
+                <span class="tech-tag">Microsoft Power BI</span>
+                <span class="tech-tag">DAX Modeling</span>
+                <span class="tech-tag">Cross-Filtering Parameters</span>
+                <span class="tech-tag">Executive KPI Telemetry</span>
+                <span class="tech-tag">Predictive Analytics</span>
+              </div>
+            </div>
+
+            <div class="skill-category-item">
+              <div class="skill-category-title">Full-Stack Development &amp; Systems</div>
+              <div class="skill-tags-flex">
+                <span class="tech-tag">PHP</span>
+                <span class="tech-tag">JavaScript / TypeScript</span>
+                <span class="tech-tag">Node.js &amp; Express</span>
+                <span class="tech-tag">Python</span>
+                <span class="tech-tag">RESTful APIs</span>
+                <span class="tech-tag">Anime.js Micro-Interactions</span>
+              </div>
+            </div>
+
+            <div class="skill-category-item">
+              <div class="skill-category-title">Quantitative Analysis &amp; Spreadsheets</div>
+              <div class="skill-tags-flex">
+                <span class="tech-tag">Microsoft Excel</span>
+                <span class="tech-tag">Conditional Validation</span>
+                <span class="tech-tag">Nested Formulas (INDEX/MATCH)</span>
+                <span class="tech-tag">Pivot Reporting</span>
+              </div>
+            </div>
+
+            <div class="skill-category-item">
+              <div class="skill-category-title">Mobile Engineering &amp; Developer Tooling</div>
+              <div class="skill-tags-flex">
+                <span class="tech-tag">Flutter &amp; Dart</span>
+                <span class="tech-tag">Git &amp; GitHub</span>
+                <span class="tech-tag">GitHub YOLO Badge</span>
+                <span class="tech-tag">VS Code</span>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      <!-- 
+      ================================================================================
+                          SECTION 6: WORK EXPERIENCE & SYSTEMS
+      ================================================================================
+      -->
+      <section id="work" class="antonio-section">
+        <div class="section-label-header">
+          <span class="section-eyebrow">CAREER &amp; PROJECTS</span>
+          <span class="section-tag-right">[04 &mdash; CASE STUDIES]</span>
+        </div>
+
+        <div class="work-timeline-list">
+
+          <!-- CASE 01: VOIDLESS INJECTOR -->
+          <article class="work-timeline-card">
+            <div class="work-card-info">
+              <div>
+                <h3 class="work-role-title">Voidless Injector</h3>
+                <div class="work-meta-line">HIGH-PERFORMANCE MYSQL SCHEMA SEEDER &bull; 2026 &mdash; PRESENT</div>
+                <p class="work-card-description">
+                  An autonomous MySQL database seeding and schema injector. Engineered with a custom monochrome atmosphere interface, real-time streaming console telemetry, relational multi-table dependency resolution, and automated synthetic data pipelines.
+                </p>
+              </div>
+
+              <div>
+                <div class="skill-tags-flex" style="margin-bottom: 16px;">
+                  <span class="tech-tag">PHP</span>
+                  <span class="tech-tag">MySQL</span>
+                  <span class="tech-tag">WAMP</span>
+                  <span class="tech-tag">Vanilla JS</span>
+                  <span class="tech-tag">CSS Design System</span>
+                </div>
+                <a href="https://github.com/sushishy" target="_blank" rel="noopener noreferrer" class="btn-secondary-pill">
                   <span>Source Code</span>
                   <span>&rarr;</span>
                 </a>
               </div>
             </div>
 
-            <!-- INTERACTIVE PREVIEW PANEL -->
-            <div class="case-study-preview-panel">
-              <div class="preview-panel-header">
-                <span class="preview-badge">Live Console Output</span>
-                <span style="font-family: var(--font-mono); font-size: 11px; color: var(--accent-color);">42ms latency</span>
+            <div class="work-card-telemetry">
+              <div class="telemetry-header">
+                <span class="telemetry-status-pill">Live Console Output</span>
+                <span class="telemetry-latency">42ms latency</span>
               </div>
-              <div class="code-snippet-box">
+              <div class="console-output-box">
                 <div style="color: var(--text-secondary);">&gt; Injecting schema: voidless_core...</div>
                 <div style="color: var(--text-primary);">&gt; Resolved 4 foreign key dependencies</div>
                 <div style="color: var(--accent-color);">&gt; Generated 10,000 synthetic records [OK]</div>
@@ -115,34 +295,35 @@
             </div>
           </article>
 
-          <!-- CASE 02: POWER BI BUSINESS ANALYTICS -->
-          <article class="case-study-card">
-            <div class="case-study-info">
-              <span class="case-study-tag">02 &bull; Business Intelligence & DAX</span>
-              <h2 class="case-study-title">Power BI Enterprise Analytics Suite</h2>
-              <p class="case-study-desc">
-                Executive business intelligence and decision modeling. Formulated with calculated DAX measures, automated cross-filtering parameters, and visual segmentation matrices to evaluate revenue performance.
-              </p>
-              <div class="tech-tags-list">
-                <span class="tech-tag">Power BI</span>
-                <span class="tech-tag">DAX Modeling</span>
-                <span class="tech-tag">Business Analytics</span>
-                <span class="tech-tag">Data Visualization</span>
+          <!-- CASE 02: POWER BI SUITE -->
+          <article class="work-timeline-card">
+            <div class="work-card-info">
+              <div>
+                <h3 class="work-role-title">Power BI Enterprise Analytics Suite</h3>
+                <div class="work-meta-line">EXECUTIVE BUSINESS INTELLIGENCE &bull; SEAIT ANALYTICS &bull; 2026</div>
+                <p class="work-card-description">
+                  Executive business intelligence and decision modeling. Formulated with calculated DAX measures, automated cross-filtering parameters, and visual segmentation matrices to evaluate revenue performance.
+                </p>
               </div>
-              <div style="margin-top: 8px;">
+
+              <div>
+                <div class="skill-tags-flex" style="margin-bottom: 16px;">
+                  <span class="tech-tag">Power BI</span>
+                  <span class="tech-tag">DAX Modeling</span>
+                  <span class="tech-tag">Business Analytics</span>
+                  <span class="tech-tag">Data Visualization</span>
+                </div>
                 <span class="tech-tag" style="background: transparent; border-color: var(--border-focus); color: var(--accent-color);">
-                  Live Data Dashboard
+                  Verified Production Telemetry
                 </span>
               </div>
             </div>
 
-            <!-- INTERACTIVE PREVIEW PANEL (REAL KPI GRAPHS INSTEAD OF BLANK BOXES) -->
-            <div class="case-study-preview-panel">
-              <div class="preview-panel-header">
-                <span class="preview-badge">Executive Telemetry Preview</span>
-                <span style="font-family: var(--font-mono); font-size: 11px; color: #22c55e;">+18.4% YoY</span>
+            <div class="work-card-telemetry">
+              <div class="telemetry-header">
+                <span class="telemetry-status-pill">Executive Telemetry Preview</span>
+                <span class="telemetry-latency">+18.4% YoY</span>
               </div>
-
               <div class="kpi-metrics-grid">
                 <div class="kpi-tile">
                   <span class="kpi-label">Gross Revenue</span>
@@ -160,49 +341,45 @@
                   <span class="kpi-trend">&check; Verified</span>
                 </div>
               </div>
-
-              <!-- MINI REVENUE TREND BAR GRAPH -->
-              <div style="display: flex; flex-direction: column; gap: 8px; margin-top: 6px;">
-                <div style="display: flex; justify-content: space-between; font-family: var(--font-mono); font-size: 10px; color: var(--text-secondary);">
-                  <span>MONTHLY PROGRESSION</span>
-                  <span>Q1 &mdash; Q4 2026</span>
-                </div>
-                <div class="mini-chart-container">
-                  <div class="chart-bar-elem" style="height: 35%;"></div>
-                  <div class="chart-bar-elem" style="height: 50%;"></div>
-                  <div class="chart-bar-elem" style="height: 45%;"></div>
-                  <div class="chart-bar-elem" style="height: 65%;"></div>
-                  <div class="chart-bar-elem" style="height: 80%;"></div>
-                  <div class="chart-bar-elem highlight" style="height: 100%;"></div>
-                </div>
+              <div class="mini-chart-container">
+                <div class="chart-bar-elem" style="height: 35%;"></div>
+                <div class="chart-bar-elem" style="height: 50%;"></div>
+                <div class="chart-bar-elem" style="height: 45%;"></div>
+                <div class="chart-bar-elem" style="height: 65%;"></div>
+                <div class="chart-bar-elem" style="height: 80%;"></div>
+                <div class="chart-bar-elem highlight" style="height: 100%;"></div>
               </div>
             </div>
           </article>
 
-          <!-- CASE 03: EXCEL ITST111 ANALYTICS -->
-          <article class="case-study-card">
-            <div class="case-study-info">
-              <span class="case-study-tag">03 &bull; Coursework & Quantitative Analysis</span>
-              <h2 class="case-study-title">Excel Data Processing & Validation (ITST111)</h2>
-              <p class="case-study-desc">
-                Structured spreadsheet systems covering Weeks 5 through 8 of ITST111. Incorporates automated pivot summaries, lookup matrices (`VLOOKUP`, `INDEX/MATCH`), conditional data validation rules, and statistical error-handling.
-              </p>
-              <div class="tech-tags-list">
-                <span class="tech-tag">Microsoft Excel</span>
-                <span class="tech-tag">Data Validation</span>
-                <span class="tech-tag">Statistical Formulas</span>
-                <span class="tech-tag">Pivot Summaries</span>
+          <!-- CASE 03: EXCEL DATA VALIDATION -->
+          <article class="work-timeline-card">
+            <div class="work-card-info">
+              <div>
+                <h3 class="work-role-title">Excel Data Processing &amp; Validation</h3>
+                <div class="work-meta-line">COURSEWORK WEEKS 5&ndash;8 &bull; ITST111 &bull; 2026</div>
+                <p class="work-card-description">
+                  Structured spreadsheet systems covering Weeks 5 through 8 of ITST111. Incorporates automated pivot summaries, lookup matrices (`VLOOKUP`, `INDEX/MATCH`), conditional data validation rules, and statistical error-handling.
+                </p>
+              </div>
+
+              <div>
+                <div class="skill-tags-flex">
+                  <span class="tech-tag">Microsoft Excel</span>
+                  <span class="tech-tag">Data Validation</span>
+                  <span class="tech-tag">Statistical Formulas</span>
+                  <span class="tech-tag">Pivot Summaries</span>
+                </div>
               </div>
             </div>
 
-            <!-- INTERACTIVE PREVIEW PANEL -->
-            <div class="case-study-preview-panel">
-              <div class="preview-panel-header">
-                <span class="preview-badge">Workbook Structure [Week 5&ndash;8]</span>
-                <span style="font-family: var(--font-mono); font-size: 11px; color: var(--text-secondary);">Verified Clean</span>
+            <div class="work-card-telemetry">
+              <div class="telemetry-header">
+                <span class="telemetry-status-pill">Workbook Verification</span>
+                <span class="telemetry-latency">Status: Clean</span>
               </div>
-              <div class="code-snippet-box">
-                <div style="display: flex; justify-content: space-between; margin-bottom: 6px; border-bottom: 1px solid var(--border-color); padding-bottom: 4px;">
+              <div class="console-output-box">
+                <div style="display: flex; justify-content: space-between; border-bottom: 1px solid var(--border-color); padding-bottom: 4px; margin-bottom: 6px;">
                   <span>FORMULA SCOPE</span>
                   <span>STATUS</span>
                 </div>
@@ -227,70 +404,36 @@
 
       <!-- 
       ================================================================================
-                                  SECTION 3: ABOUT & ENGINEERING ATELIER
+                                  SECTION 7: EDUCATION
       ================================================================================
       -->
-      <section id="about" class="editorial-section">
-        <div class="section-label-row">
-          <span class="section-label">Foundation & Technical Atelier</span>
-          <span class="section-index">[02]</span>
+      <section id="education" class="antonio-section">
+        <div class="section-label-header">
+          <span class="section-eyebrow">BACKGROUND</span>
+          <span class="section-tag-right">[05 &mdash; EDUCATION]</span>
         </div>
 
-        <div class="atelier-grid">
+        <div class="education-grid">
           
-          <!-- LEFT: STORY & ACADEMICS -->
-          <div class="atelier-card">
-            <span class="case-study-tag">Academic & Philosophy</span>
-            <h3 class="atelier-card-title">Building from Foundation</h3>
-            <p class="case-study-desc">
-              I am Raven. Much like the bird, I operate with a quiet, observant, and lowkey nature. In an era of copy-paste development, I prefer building architectures from scratch, understanding how protocols, queries, and interfaces work under the hood.
-            </p>
-            <div style="display: flex; flex-direction: column; gap: 8px; margin-top: 12px; font-family: var(--font-mono); font-size: 11px; color: var(--text-secondary);">
-              <div>INSTITUTION: South East Asian Institute of Technology (SEAIT)</div>
-              <div>PROGRAM: BSIT &mdash; Major in Business Analytics [3rd Year]</div>
-              <div>LOCATION: Tupi, South Cotabato, Philippines</div>
-              <div style="color: var(--accent-color); margin-top: 6px;">&star; GITHUB YOLO ACHIEVEMENT UNLOCKED</div>
+          <div class="education-card">
+            <div>
+              <div class="edu-institution">SOUTH EAST ASIAN INSTITUTE OF TECHNOLOGY</div>
+              <h3 class="edu-degree">BSIT &mdash; Business Analytics</h3>
+              <div class="edu-meta">TUPI, SOUTH COTABATO &bull; 2023 &mdash; PRESENT (3RD YEAR)</div>
+              <p class="edu-desc">
+                Specialized in relational database systems, predictive modeling, data warehousing, and business intelligence architectures.
+              </p>
             </div>
           </div>
 
-          <!-- RIGHT: CATEGORIZED TECH STACK -->
-          <div class="atelier-card">
-            <span class="case-study-tag">Engineering Stack</span>
-            <h3 class="atelier-card-title">Multi-Stack Capabilities</h3>
-            
-            <div class="stack-category-list">
-              <div class="stack-category-row">
-                <span class="stack-category-name">Languages</span>
-                <div class="stack-items-wrap">
-                  <span class="tech-tag">PHP</span>
-                  <span class="tech-tag">Python</span>
-                  <span class="tech-tag">SQL</span>
-                  <span class="tech-tag">JavaScript</span>
-                  <span class="tech-tag">TypeScript</span>
-                  <span class="tech-tag">Flutter</span>
-                </div>
-              </div>
-
-              <div class="stack-category-row">
-                <span class="stack-category-name">Backend & Systems</span>
-                <div class="stack-items-wrap">
-                  <span class="tech-tag">MySQL</span>
-                  <span class="tech-tag">WAMP Architecture</span>
-                  <span class="tech-tag">Node.js</span>
-                  <span class="tech-tag">Express</span>
-                  <span class="tech-tag">RESTful APIs</span>
-                </div>
-              </div>
-
-              <div class="stack-category-row">
-                <span class="stack-category-name">Analytics & Tools</span>
-                <div class="stack-items-wrap">
-                  <span class="tech-tag">Microsoft Power BI</span>
-                  <span class="tech-tag">Microsoft Excel</span>
-                  <span class="tech-tag">Git & GitHub</span>
-                  <span class="tech-tag">VS Code</span>
-                </div>
-              </div>
+          <div class="education-card">
+            <div>
+              <div class="edu-institution">GITHUB OPEN SOURCE &amp; AUTONOMOUS CRAFT</div>
+              <h3 class="edu-degree">Systems Engineer &amp; Builder</h3>
+              <div class="edu-meta">&star; GITHUB YOLO ACHIEVEMENT UNLOCKED</div>
+              <p class="edu-desc">
+                Dedicated to hands-on exploration across systems engineering, database seeding tooling, and modern web standards.
+              </p>
             </div>
           </div>
 
@@ -299,46 +442,100 @@
 
       <!-- 
       ================================================================================
-                                  SECTION 4: CONTACT & COLLABORATION
+                              SECTION 8: WRITING & RESEARCH
       ================================================================================
       -->
-      <section id="contact" class="editorial-section">
-        <div class="section-label-row">
-          <span class="section-label">Initiate Direct Communication</span>
-          <span class="section-index">[03]</span>
+      <section id="writing" class="antonio-section">
+        <div class="section-label-header">
+          <span class="section-eyebrow">TECHNICAL NOTES</span>
+          <span class="section-tag-right">[06 &mdash; WRITING]</span>
         </div>
 
-        <div class="contact-channels-row">
-          <a href="mailto:lacmanraven@gmail.com" class="contact-link-tile">
-            <span class="tile-label">01 &bull; Direct Email &rarr;</span>
-            <span class="tile-value">lacmanraven@gmail.com</span>
+        <div class="writing-links-list">
+          
+          <a href="#work" class="writing-item-row">
+            <div class="writing-item-left">
+              <span class="writing-title">Relational Integrity in Automated Database Seeding (Voidless)</span>
+              <span class="writing-meta">Technical Architecture &bull; 2026</span>
+            </div>
+            <span class="writing-arrow">&rarr;</span>
           </a>
 
-          <a href="https://www.linkedin.com/in/lacman-raven-48082a441" target="_blank" rel="noopener noreferrer" class="contact-link-tile">
-            <span class="tile-label">02 &bull; LinkedIn &rarr;</span>
-            <span class="tile-value">Raven Lacman</span>
+          <a href="#work" class="writing-item-row">
+            <div class="writing-item-left">
+              <span class="writing-title">DAX Measure Formulation for High-Volume Revenue Forecasting</span>
+              <span class="writing-meta">Business Intelligence &bull; 2026</span>
+            </div>
+            <span class="writing-arrow">&rarr;</span>
           </a>
 
-          <a href="https://github.com/sushishy" target="_blank" rel="noopener noreferrer" class="contact-link-tile">
-            <span class="tile-label">03 &bull; GitHub &rarr;</span>
-            <span class="tile-value">github.com/sushishy</span>
+          <a href="#about" class="writing-item-row">
+            <div class="writing-item-left">
+              <span class="writing-title">Building from Foundation: Why Understanding Under-the-Hood Logic Matters</span>
+              <span class="writing-meta">Engineering Philosophy &bull; 2025</span>
+            </div>
+            <span class="writing-arrow">&rarr;</span>
           </a>
 
-          <a href="tel:+639923953891" class="contact-link-tile">
-            <span class="tile-label">04 &bull; Direct Line &rarr;</span>
-            <span class="tile-value">+63 992 395 3891</span>
+          <a href="#work" class="writing-item-row">
+            <div class="writing-item-left">
+              <span class="writing-title">Structured Spreadsheet Architectures &amp; Validation in ITST111</span>
+              <span class="writing-meta">Coursework Reflection &bull; 2026</span>
+            </div>
+            <span class="writing-arrow">&rarr;</span>
           </a>
+
         </div>
       </section>
 
       <!-- 
       ================================================================================
-                                  FOOTER & METRICS
+                                  SECTION 9: CONTACT
       ================================================================================
       -->
-      <footer class="atelier-footer">
+      <section id="contact" class="antonio-section">
+        <div class="section-label-header">
+          <span class="section-eyebrow">GET IN TOUCH</span>
+          <span class="section-tag-right">[07 &mdash; CONTACT]</span>
+        </div>
+
+        <div class="contact-editorial-container">
+          <h2 class="contact-headline">
+            Available for software engineering roles, analytics internships, and collaborative systems development.
+          </h2>
+
+          <div class="contact-tiles-grid">
+            <a href="mailto:lacmanraven@gmail.com" class="contact-editorial-tile">
+              <span class="contact-tile-number">01 &bull; Direct Email &rarr;</span>
+              <span class="contact-tile-value">lacmanraven@gmail.com</span>
+            </a>
+
+            <a href="https://www.linkedin.com/in/lacman-raven-48082a441" target="_blank" rel="noopener noreferrer" class="contact-editorial-tile">
+              <span class="contact-tile-number">02 &bull; LinkedIn &rarr;</span>
+              <span class="contact-tile-value">Raven Lacman</span>
+            </a>
+
+            <a href="https://github.com/sushishy" target="_blank" rel="noopener noreferrer" class="contact-editorial-tile">
+              <span class="contact-tile-number">03 &bull; GitHub &rarr;</span>
+              <span class="contact-tile-value">github.com/sushishy</span>
+            </a>
+
+            <a href="tel:+639923953891" class="contact-editorial-tile">
+              <span class="contact-tile-number">04 &bull; Direct Line &rarr;</span>
+              <span class="contact-tile-value">+63 992 395 3891</span>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- 
+      ================================================================================
+                                      FOOTER
+      ================================================================================
+      -->
+      <footer class="editorial-footer">
         <div>&copy; 2026 RAVEN D. LACMAN &mdash; ALL RIGHTS RESERVED</div>
-        <div>ATMOSPHERE: OBSIDIAN MONOCHROME</div>
+        <div>ATMOSPHERE: OBSIDIAN MONOCHROME &bull; ANTONIO VEGA ARCHITECTURE</div>
       </footer>
 
     </div>
@@ -352,8 +549,11 @@
   <nav class="floating-bottom-dock">
     <div class="dock-links">
       <a href="#hero" class="dock-link active">Home</a>
-      <a href="#projects" class="dock-link">Work</a>
       <a href="#about" class="dock-link">About</a>
+      <a href="#skills" class="dock-link">Skills</a>
+      <a href="#work" class="dock-link">Work</a>
+      <a href="#education" class="dock-link">Education</a>
+      <a href="#writing" class="dock-link">Writing</a>
       <a href="#contact" class="dock-link">Contact</a>
     </div>
 
