@@ -7,7 +7,7 @@ html {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  padding: 0 48px 48px 48px;
+  padding: 60px 48px 120px 48px;
   background-color: var(--bg-primary);
   background-image: 
     radial-gradient(circle at 50% 10%, var(--glow-strength) 0%, transparent 60%),
@@ -19,36 +19,88 @@ html {
 
 /* 
 ================================================================================
-                        TOP STICKY NAVIGATION & CONTROLS
+                        BOTTOM FLOATING NAVIGATION DOCK
 ================================================================================
 */
 
-.intro-nav-wrapper {
-  position: sticky;
-  top: 0;
-  width: 100%;
-  z-index: 100;
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-  background-color: rgba(8, 8, 10, 0.75);
-  border-bottom: 1px solid var(--border-color);
-  margin-left: -48px;
-  margin-right: -48px;
-  padding: 18px 48px;
-  transition: all 0.3s ease;
-}
-
-html.light-theme .intro-nav-wrapper {
-  background-color: rgba(244, 244, 240, 0.85);
-}
-
-.intro-nav {
+.floating-bottom-dock {
+  position: fixed;
+  bottom: 28px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1000;
   display: flex;
-  justify-content: space-between;
   align-items: center;
-  max-width: 1300px;
-  margin: 0 auto;
-  width: 100%;
+  gap: 10px;
+  padding: 6px 10px;
+  border-radius: 9999px;
+  background-color: rgba(16, 16, 19, 0.82);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid var(--border-color);
+  box-shadow: 0 20px 50px var(--shadow-color);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+html.light-theme .floating-bottom-dock {
+  background-color: rgba(255, 255, 255, 0.9);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+}
+
+.dock-links {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.dock-link {
+  font-family: var(--font-sans);
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--text-secondary);
+  text-decoration: none;
+  padding: 8px 16px;
+  border-radius: 9999px;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+}
+
+.dock-link:hover {
+  color: var(--text-primary);
+  background-color: var(--bg-input);
+}
+
+.dock-link.active {
+  color: var(--text-primary);
+  background-color: var(--bg-input);
+  border: 1px solid var(--border-color);
+  font-weight: 600;
+}
+
+.dock-divider {
+  width: 1px;
+  height: 20px;
+  background-color: var(--border-color);
+}
+
+.dock-theme-toggle {
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background-color: var(--bg-input);
+  border: 1px solid var(--border-color);
+  color: var(--text-primary);
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-size: 14px;
+}
+
+.dock-theme-toggle:hover {
+  border-color: var(--border-focus);
+  transform: scale(1.08);
 }
 
 .brand-mark {

@@ -16,7 +16,7 @@ import { IntroController } from './intro-controller.js';
 class ScrollSpy {
   constructor() {
     this.sections = document.querySelectorAll('section[id]');
-    this.navLinks = document.querySelectorAll('.nav-links a');
+    this.navLinks = document.querySelectorAll('.dock-link, .nav-link, .nav-links a');
   }
 
   init() {
