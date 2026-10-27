@@ -1,0 +1,63 @@
+/* 
+================================================================================
+          PORTFOLIO DESIGN SYSTEM VARIABLES (VOIDLESS ATMOSPHERE THEME)
+================================================================================
+*/
+
+:root {
+    /* Dark Atmosphere Theme (Default) */
+    --bg-primary: #08080a;
+    --bg-panel: #101013;
+    --bg-input: #15151a;
+    --bg-icon-plate: #1a1a21;
+    --border-color: #22222a;
+    --border-focus: #edeae4;
+    
+    --text-primary: #ffffff;
+    --text-secondary: #a1a1aa;
+    --text-accent: #a1a1aa;
+    
+    --accent-color: #edeae4;       /* Warm Ivory Primary Pill */
+    --accent-hover: #e1ded6;
+    --text-inverse: #101013;       /* Contrast text for warm ivory button */
+    
+    --glow-strength: rgba(237, 234, 228, 0.12);
+    
+    --console-bg: #070709;
+    --console-text: #e4e4e7;
+    --console-text-system: #a1a1aa;
+    --console-text-success: #ffffff;
+    
+    --font-serif: 'Instrument Serif', Georgia, serif;
+    --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
+    --font-mono: 'JetBrains Mono', 'Courier New', monospace;
+    
+    --shadow-color: rgba(0, 0, 0, 0.6);
+}
+
+/* Light Atmosphere Theme Overrides */
+html.light-theme {
+    --bg-primary: #f4f4f0;         /* Warm Ivory canvas background */
+    --bg-panel: #ffffff;           /* Pure white cards */
+    --bg-input: #fcfcfa;
+    --bg-icon-plate: #f5f5f1;
+    --border-color: #e2e2e7;
+    --border-focus: #101013;       /* High-contrast solid dark focus */
+    
+    --text-primary: #101013;
+    --text-secondary: #71717a;
+    --text-accent: #71717a;
+    
+    --accent-color: #101013;       /* Solid dark primary pill */
+    --accent-hover: #1f1f26;
+    --text-inverse: #ffffff;       /* Contrast text for dark button */
+    
+    --glow-strength: rgba(16, 16, 19, 0.06);
+    
+    --console-bg: #0a0a0d;         /* Maintain dark terminal logs */
+    --console-text: #f4f4f5;
+    --console-text-system: #a1a1aa;
+    --console-text-success: #ffffff;
+    
+    --shadow-color: rgba(16, 16, 19, 0.03);
+}
