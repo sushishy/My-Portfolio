@@ -57,15 +57,24 @@ html.light-theme .page-wrapper {
   gap: 20px;
 }
 
+/* 
+================================================================================
+      ABOUT PAGE PROFILE IMAGE - ADJUST WIDTH & HEIGHT HERE
+================================================================================
+*/
 .profile-portrait-container {
   position: relative;
-  width: 160px;
-  height: 160px;
+  /* ====== ADJUST ABOUT PAGE PORTRAIT CONTAINER ====== */
+  width: 160px;                 /* <--- Adjust container width */
+  height: 160px;                /* <--- Adjust container height */
+  /* ================================================== */
 }
 
 .profile-portrait {
-  width: 160px;
-  height: 160px;
+  /* ====== ADJUST ABOUT PAGE PORTRAIT IMAGE SIZING ====== */
+  width: 160px;                 /* <--- Adjust image width */
+  height: 160px;                /* <--- Adjust image height */
+  /* ==================================================== */
   border-radius: 24px;
   object-fit: cover;
   object-position: top;
