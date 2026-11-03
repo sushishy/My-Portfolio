@@ -864,8 +864,8 @@ html.light-theme .intro-wrapper::before {
   justify-content: center;
   border-radius: 50%;
   background-color: var(--bg-panel);
-  border: 1px solid var(--border-color);
-  color: var(--text-secondary);
+  border: 1px solid #ffffff;
+  color: #ffffff;
   cursor: pointer;
   transition: all 0.2s ease;
   padding: 0;
