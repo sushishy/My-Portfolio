@@ -633,6 +633,119 @@ class SkeletonManager {
                         MAIN APPLICATION
 ================================================================================
 */
+/* 
+================================================================================
+          VOIDLESS INJECTOR — SMART APP LAUNCH LOADER CONTROLLER
+          Smooth requestAnimationFrame single-sweep with percentage & status cycling
+================================================================================
+*/
+class LaunchLoader {
+  constructor(options = {}) {
+    this.totalMs = options.totalMs || 2400;
+    this.fadeoutMs = options.fadeoutMs || 650;
+    this.overlay = document.getElementById('app-launch-loader');
+    this.fill = document.getElementById('launch-progress-fill');
+    this.pctEl = document.getElementById('launch-percent-text');
+    this.statusEl = document.getElementById('launch-status-text');
+
+    this.msgs = [
+      'Initializing portfolio core...',
+      'Mounting architectural layout...',
+      'Loading business intelligence telemetry...',
+      'Synchronizing relational schema engines...',
+      'Calibrating interactive motion vectors...',
+      'Systems ready.'
+    ];
+
+    this.onComplete = options.onComplete || null;
+    this.isDismissed = false;
+  }
+
+  init() {
+    if (!this.overlay || !this.fill || !this.pctEl || !this.statusEl) {
+      if (this.onComplete) this.onComplete();
+      return;
+    }
+
+    // Allow user to tap/click overlay to enter instantly
+    this.overlay.addEventListener('click', () => this.dismissLoader());
+
+    this.run();
+  }
+
+  run() {
+    requestAnimationFrame(() => {
+      requestAnimationFrame(() => {
+        if (this.fill) {
+          this.fill.style.transition = `width ${this.totalMs}ms cubic-bezier(0.16, 1, 0.3, 1)`;
+          this.fill.style.width = '100%';
+        }
+      });
+    });
+
+    const msgCount = this.msgs.length;
+    const startTime = performance.now();
+    let lastMsgIdx = -1;
+
+    const tick = (now) => {
+      if (this.isDismissed) return;
+
+      const elapsed = now - startTime;
+      const rawPct = Math.min(elapsed / this.totalMs, 1);
+      const intPct = Math.round(rawPct * 100);
+
+      if (this.pctEl) {
+        this.pctEl.textContent = `${intPct}%`;
+      }
+
+      const msgIdx = Math.min(Math.floor(rawPct * msgCount), msgCount - 1);
+      if (msgIdx !== lastMsgIdx) {
+        lastMsgIdx = msgIdx;
+        if (this.statusEl) {
+          this.statusEl.style.opacity = '0';
+          setTimeout(() => {
+            if (this.statusEl && !this.isDismissed) {
+              this.statusEl.textContent = this.msgs[msgIdx];
+              this.statusEl.style.transition = 'opacity 0.2s ease';
+              this.statusEl.style.opacity = '1';
+            }
+          }, 90);
+        }
+      }
+
+      if (rawPct < 1) {
+        requestAnimationFrame(tick);
+      } else {
+        setTimeout(() => this.dismissLoader(), 300);
+      }
+    };
+
+    requestAnimationFrame(tick);
+  }
+
+  dismissLoader() {
+    if (this.isDismissed) return;
+    this.isDismissed = true;
+
+    if (!this.overlay) {
+      if (this.onComplete) this.onComplete();
+      return;
+    }
+
+    this.overlay.classList.add('fade-out');
+
+    if (this.onComplete) {
+      this.onComplete();
+    }
+
+    setTimeout(() => {
+      if (this.overlay && this.overlay.parentNode) {
+        this.overlay.parentNode.removeChild(this.overlay);
+      }
+    }, this.fadeoutMs);
+  }
+}
+
 class PortfolioApp {
   constructor() {
     this.themeManager = new ThemeManager();
@@ -654,11 +767,18 @@ class PortfolioApp {
       console.warn('ScrollSpy init error:', e);
     }
 
-    try {
-      this.motionController.init();
-    } catch (e) {
-      console.warn('MotionController init error:', e);
-    }
+    const loader = new LaunchLoader({
+      totalMs: 2400,
+      onComplete: () => {
+        try {
+          this.motionController.init();
+        } catch (e) {
+          console.warn('MotionController init error:', e);
+        }
+      }
+    });
+
+    loader.init();
 
     try {
       this.skeletonManager.init();

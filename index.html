@@ -23,6 +23,35 @@
 </head>
 
 <body>
+  <!-- 
+  ================================================================================
+            VOIDLESS INJECTOR ARCHITECTURE — APP LAUNCH FULLSCREEN LOADER
+  ================================================================================
+  -->
+  <div id="app-launch-loader" class="app-launch-overlay" aria-label="Loading portfolio">
+    <div class="launch-content">
+      <div class="launch-icon-wrap">
+        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+          <polygon points="12 2 2 7 12 12 22 7 12 2"></polygon>
+          <polyline points="2 17 12 22 22 17"></polyline>
+          <polyline points="2 12 12 17 22 12"></polyline>
+        </svg>
+      </div>
+      <h1 class="launch-brand-name">Raven Lacman</h1>
+      <p class="launch-tagline">Systems Architect &amp; Analytics Portfolio</p>
+
+      <div class="launch-stats-row">
+        <span id="launch-status-text" class="launch-status-text">Initializing portfolio core...</span>
+        <span id="launch-percent-text" class="launch-percent-text">0%</span>
+      </div>
+      <div class="launch-progress-track">
+        <div id="launch-progress-fill" class="launch-progress-fill"></div>
+      </div>
+
+      <span class="launch-credit">by raven d. lacman</span>
+    </div>
+  </div>
+
   <!-- Top Scroll Progress Indicator -->
   <div class="scroll-progress-bar" id="scroll-progress-bar" aria-hidden="true"></div>
 
