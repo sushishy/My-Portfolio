@@ -673,28 +673,39 @@ class LaunchLoader {
   }
 
   run() {
-    requestAnimationFrame(() => {
-      requestAnimationFrame(() => {
-        if (this.fill) {
-          this.fill.style.transition = `width ${this.totalMs}ms cubic-bezier(0.16, 1, 0.3, 1)`;
-          this.fill.style.width = '100%';
-        }
-      });
-    });
+    // 1. Explicitly initialize UI elements to exact 0
+    if (this.pctEl) this.pctEl.textContent = '0%';
+    if (this.fill) {
+      this.fill.style.transition = 'none';
+      this.fill.style.width = '0%';
+    }
+    if (this.statusEl) {
+      this.statusEl.textContent = this.msgs[0];
+      this.statusEl.style.opacity = '1';
+    }
 
     const msgCount = this.msgs.length;
-    const startTime = performance.now();
-    let lastMsgIdx = -1;
+    let startTime = null;
+    let lastMsgIdx = 0;
 
     const tick = (now) => {
       if (this.isDismissed) return;
 
-      const elapsed = now - startTime;
-      const rawPct = Math.min(elapsed / this.totalMs, 1);
-      const intPct = Math.round(rawPct * 100);
+      // Ensure elapsed begins at 0 on the first render frame
+      if (!startTime) {
+        startTime = now;
+      }
 
+      const elapsed = now - startTime;
+      const rawPct = Math.min(Math.max(elapsed / this.totalMs, 0), 1);
+      const intPct = Math.floor(rawPct * 100);
+
+      // Lockstep update: both the counter and the fill bar advance synchronously
       if (this.pctEl) {
         this.pctEl.textContent = `${intPct}%`;
+      }
+      if (this.fill) {
+        this.fill.style.width = `${(rawPct * 100).toFixed(2)}%`;
       }
 
       const msgIdx = Math.min(Math.floor(rawPct * msgCount), msgCount - 1);
@@ -715,7 +726,9 @@ class LaunchLoader {
       if (rawPct < 1) {
         requestAnimationFrame(tick);
       } else {
-        setTimeout(() => this.dismissLoader(), 300);
+        if (this.pctEl) this.pctEl.textContent = '100%';
+        if (this.fill) this.fill.style.width = '100%';
+        setTimeout(() => this.dismissLoader(), 350);
       }
     };
 
