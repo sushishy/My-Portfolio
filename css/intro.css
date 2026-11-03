@@ -524,99 +524,22 @@ html.light-theme .intro-wrapper::before {
   margin: 0 0 20px 0;
 }
 
-/* Dashboard Visual Previews */
-.dashboard-preview-card {
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
-  background-color: var(--console-bg);
-  border: 1px solid var(--border-color);
-  border-radius: 12px;
-  padding: 20px;
-  position: relative;
-}
+/* 
+================================================================================
+        WORK CARD TELEMETRY & PREVIEW FRAME (EXACT SCREENSHOT FORMAT)
+================================================================================
+*/
 
-.dashboard-visual-frame {
-  position: relative;
-  width: 100%;
-  border-radius: 8px;
-  overflow: hidden;
-  border: 1px solid var(--border-color);
-  background-color: #000000;
-  aspect-ratio: 16/9.2;
-}
-
-.dashboard-visual-frame img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center top;
-  display: block;
-  transition: transform 0.4s ease;
-}
-
-.dashboard-visual-frame:hover img {
-  transform: scale(1.02);
-}
-
-.dashboard-quick-actions {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 12px;
-  margin-top: 4px;
-  flex-wrap: wrap;
-}
-
-.btn-report-pill {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  padding: 8px 18px;
-  border-radius: 9999px;
-  background-color: var(--accent-color);
-  color: var(--text-inverse);
-  font-family: var(--font-sans);
-  font-size: 12px;
-  font-weight: 600;
-  text-decoration: none;
-  transition: all 0.2s ease;
-}
-
-.btn-report-pill:hover {
-  opacity: 0.9;
-  transform: translateY(-1px);
-}
-
-.btn-report-secondary {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  padding: 8px 16px;
-  border-radius: 9999px;
-  background-color: var(--bg-input);
-  border: 1px solid var(--border-color);
-  color: var(--text-primary);
-  font-family: var(--font-mono);
-  font-size: 11px;
-  text-decoration: none;
-  transition: all 0.2s ease;
-}
-
-.btn-report-secondary:hover {
-  border-color: var(--border-focus);
-}
-
-/* Live Telemetry Previews */
 .work-card-telemetry {
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
   background-color: var(--console-bg);
   border: 1px solid var(--border-color);
   border-radius: 12px;
   padding: 24px;
   position: relative;
+  overflow: hidden;
 }
 
 .telemetry-header {
@@ -642,71 +565,27 @@ html.light-theme .intro-wrapper::before {
   color: #22c55e;
 }
 
-.console-output-box {
-  font-family: var(--font-mono);
-  font-size: 12px;
-  line-height: 1.6;
-  color: var(--console-text);
-  display: flex;
-  flex-direction: column;
-  gap: 4px;
-}
-
-/* KPI Grid */
-.kpi-metrics-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 12px;
-  margin-bottom: 16px;
-}
-
-.kpi-tile {
-  background-color: var(--bg-panel);
-  border: 1px solid var(--border-color);
+.telemetry-preview-image {
+  width: 100%;
   border-radius: 8px;
-  padding: 12px 14px;
-  display: flex;
-  flex-direction: column;
-  gap: 4px;
+  overflow: hidden;
+  border: 1px solid var(--border-color);
+  background-color: #050507;
+  aspect-ratio: 16/9.5;
+  display: block;
 }
 
-.kpi-label {
-  font-family: var(--font-mono);
-  font-size: 10px;
-  text-transform: uppercase;
-  color: var(--text-secondary);
+.telemetry-preview-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+  display: block;
+  transition: transform 0.4s ease;
 }
 
-.kpi-value {
-  font-family: var(--font-sans);
-  font-size: 20px;
-  font-weight: 700;
-  color: var(--text-primary);
-}
-
-.kpi-trend {
-  font-family: var(--font-mono);
-  font-size: 10px;
-  color: #22c55e;
-}
-
-.mini-chart-container {
-  display: flex;
-  align-items: flex-end;
-  gap: 8px;
-  height: 50px;
-  padding-top: 10px;
-}
-
-.chart-bar-elem {
-  flex: 1;
-  background-color: var(--border-color);
-  border-radius: 4px 4px 0 0;
-  transition: height 0.3s ease, background-color 0.2s ease;
-}
-
-.chart-bar-elem.highlight {
-  background-color: var(--accent-color);
+.telemetry-preview-image:hover img {
+  transform: scale(1.02);
 }
 
 /* 
@@ -849,8 +728,9 @@ html.light-theme .intro-wrapper::before {
 
 .contact-tiles-grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 16px;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+  max-width: 900px;
 }
 
 .contact-editorial-tile {
