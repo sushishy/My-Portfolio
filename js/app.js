@@ -75,7 +75,7 @@ class ThemeManager {
 */
 class ScrollSpy {
   constructor() {
-    this.navLinks = Array.from(document.querySelectorAll('.antonio-nav-link, .dock-link'));
+    this.navLinks = Array.from(document.querySelectorAll('.editorial-nav-link, .dock-link'));
     this.sectionData = [];
     this.isClickScrolling = false;
     this.clickTimer = null;

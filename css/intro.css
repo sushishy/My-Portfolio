@@ -1,6 +1,6 @@
 /* 
 ================================================================================
-           ANTONIO VEGA EDITORIAL ATELIER - VOIDLESS ATMOSPHERE
+           EDITORIAL ATELIER - VOIDLESS ATMOSPHERE
            Synchronized typography: Instrument Serif, Inter, JetBrains Mono
            Synchronized palette: #08080a, #101013, #22222a, #edeae4
 ================================================================================
@@ -81,11 +81,11 @@ html.light-theme .intro-wrapper::before {
 
 /* 
 ================================================================================
-                        SECTION 1: HERO (ANTONIO VEGA FORMAT)
+                        SECTION 1: HERO (EDITORIAL FORMAT)
 ================================================================================
 */
 
-.antonio-hero {
+.editorial-hero {
   padding: 64px 0 120px 0;
   display: grid;
   grid-template-columns: 1.15fr 0.85fr;
@@ -259,11 +259,11 @@ html.light-theme .intro-wrapper::before {
 
 /* 
 ================================================================================
-                        SECTION HEADER STYLES (ANTONIO STYLE)
+                        SECTION HEADER STYLES (EDITORIAL STYLE)
 ================================================================================
 */
 
-.antonio-section {
+.editorial-section {
   padding: 100px 0;
   position: relative;
 }
@@ -800,11 +800,11 @@ html.light-theme .intro-wrapper::before {
 
 /* 
 ================================================================================
-            RIGHT VERTICAL NAVIGATION (ANTONIO VEGA EDITORIAL STYLE)
+            RIGHT VERTICAL NAVIGATION (EDITORIAL STYLE)
 ================================================================================
 */
 
-.antonio-side-nav {
+.editorial-side-nav {
   position: fixed;
   right: clamp(28px, 4vw, 56px);
   top: 50%;
@@ -816,7 +816,7 @@ html.light-theme .intro-wrapper::before {
   gap: 16px;
 }
 
-.antonio-nav-link {
+.editorial-nav-link {
   font-family: var(--font-serif);
   font-size: 16.5px;
   font-weight: 400;
@@ -830,17 +830,17 @@ html.light-theme .intro-wrapper::before {
   cursor: pointer;
 }
 
-.antonio-nav-link:hover {
+.editorial-nav-link:hover {
   color: var(--text-primary);
 }
 
-.antonio-nav-link.active {
+.editorial-nav-link.active {
   color: var(--text-primary);
   font-weight: 500;
 }
 
-/* Sharp clean underline matching Antonio Vega template */
-.antonio-nav-link::after {
+/* Sharp clean underline editorial minimalist design */
+.editorial-nav-link::after {
   content: '';
   position: absolute;
   left: 0;
@@ -851,11 +851,11 @@ html.light-theme .intro-wrapper::before {
   transition: width 0.22s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-.antonio-nav-link.active::after {
+.editorial-nav-link.active::after {
   width: 100%;
 }
 
-.antonio-theme-toggle {
+.editorial-theme-toggle {
   margin-top: 8px;
   width: 34px;
   height: 34px;
@@ -886,7 +886,7 @@ html.light-theme .intro-wrapper::before {
   display: block;
 }
 
-.antonio-theme-toggle:hover {
+.editorial-theme-toggle:hover {
   color: var(--text-primary);
   border-color: var(--border-focus);
   transform: scale(1.08);
@@ -952,14 +952,14 @@ html.light-theme .work-card-actions .btn-secondary-pill:hover {
   transform: translateY(-2px);
 }
 
-html.light-theme .antonio-theme-toggle {
+html.light-theme .editorial-theme-toggle {
   background-color: #ffffff;
   color: #000000;
   border: 1px solid #000000;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06);
 }
 
-html.light-theme .antonio-theme-toggle:hover {
+html.light-theme .editorial-theme-toggle:hover {
   background-color: #f4f4f0;
   color: #000000;
   border-color: #000000;
@@ -973,7 +973,7 @@ html.light-theme .antonio-theme-toggle:hover {
 */
 
 @media (max-width: 1024px) {
-  .antonio-hero {
+  .editorial-hero {
     grid-template-columns: 1fr;
     gap: 48px;
     padding: 30px 0 80px 0;
@@ -999,7 +999,7 @@ html.light-theme .antonio-theme-toggle:hover {
   }
 
   /* Responsive bottom floating dock on tablets/mobile so right side nav doesn't cover content */
-  .antonio-side-nav {
+  .editorial-side-nav {
     position: fixed;
     top: auto;
     bottom: 20px;
@@ -1019,17 +1019,17 @@ html.light-theme .antonio-theme-toggle:hover {
     overflow-x: auto;
   }
 
-  html.light-theme .antonio-side-nav {
+  html.light-theme .editorial-side-nav {
     background-color: rgba(255, 255, 255, 0.92);
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
   }
 
-  .antonio-nav-link {
+  .editorial-nav-link {
     font-size: 12px;
     white-space: nowrap;
   }
 
-  .antonio-theme-toggle {
+  .editorial-theme-toggle {
     margin-top: 0;
     width: 28px;
     height: 28px;
@@ -1039,7 +1039,7 @@ html.light-theme .antonio-theme-toggle:hover {
 }
 
 @media (max-width: 768px) {
-  .antonio-hero {
+  .editorial-hero {
     padding-top: 10px;
   }
 
