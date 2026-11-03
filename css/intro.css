@@ -884,27 +884,45 @@ html.light-theme .intro-wrapper::before {
 
 /* 
 ================================================================================
-   HERO BUTTONS (LIGHT THEME): WHITE BACKGROUND + 1PX SOLID BLACK BORDER
+   HERO BUTTONS (LIGHT THEME): CONTRASTING PAIR (OPPOSITE OF DARK MODE)
+   - Projects: Solid Black Pill with White text
+   - Hire Me: White Pill with 1px Solid Black Border
 ================================================================================
 */
-html.light-theme .hero-actions-row .btn-primary-pill,
+html.light-theme .hero-actions-row .btn-primary-pill {
+  background-color: #101013;
+  color: #ffffff;
+  border: 1px solid #101013;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
+}
+
+html.light-theme .hero-actions-row .btn-primary-pill span {
+  color: #ffffff;
+}
+
+html.light-theme .hero-actions-row .btn-primary-pill:hover {
+  background-color: #27272a;
+  border-color: #27272a;
+  color: #ffffff;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.18);
+}
+
 html.light-theme .hero-actions-row .btn-secondary-pill {
   background-color: #ffffff;
-  color: #000000;
-  border: 1px solid #000000;
+  color: #101013;
+  border: 1px solid #101013;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06);
 }
 
-html.light-theme .hero-actions-row .btn-primary-pill span,
 html.light-theme .hero-actions-row .btn-secondary-pill span {
-  color: #000000;
+  color: #101013;
 }
 
-html.light-theme .hero-actions-row .btn-primary-pill:hover,
 html.light-theme .hero-actions-row .btn-secondary-pill:hover {
   background-color: #f4f4f0;
-  color: #000000;
-  border-color: #000000;
+  color: #101013;
+  border-color: #101013;
   transform: translateY(-2px);
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
 }
