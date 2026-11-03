@@ -807,16 +807,17 @@ html.light-theme .intro-wrapper::before {
 }
 
 .antonio-nav-link {
-  font-family: var(--font-sans);
-  font-size: 14.5px;
+  font-family: var(--font-serif);
+  font-size: 16.5px;
   font-weight: 400;
   color: var(--text-secondary);
   text-decoration: none;
-  transition: all 0.2s ease;
+  transition: color 0.2s ease, opacity 0.2s ease;
   position: relative;
   display: inline-block;
-  padding-bottom: 2px;
-  letter-spacing: 0.01em;
+  padding-bottom: 3px;
+  letter-spacing: 0.02em;
+  cursor: pointer;
 }
 
 .antonio-nav-link:hover {
@@ -829,14 +830,19 @@ html.light-theme .intro-wrapper::before {
 }
 
 /* Sharp clean underline matching Antonio Vega template */
-.antonio-nav-link.active::after {
+.antonio-nav-link::after {
   content: '';
   position: absolute;
   left: 0;
   bottom: 0;
-  width: 100%;
+  width: 0;
   height: 1.5px;
   background-color: var(--text-primary);
+  transition: width 0.22s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.antonio-nav-link.active::after {
+  width: 100%;
 }
 
 .antonio-theme-toggle {
