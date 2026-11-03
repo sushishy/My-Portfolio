@@ -28,6 +28,16 @@ class ScrollSpy {
   handleScroll() {
     const scrollPosition = window.scrollY + 200;
 
+    if (window.scrollY < 150) {
+      this.navLinks.forEach((link) => {
+        link.classList.remove('active');
+        if (link.getAttribute('href') === '#hero') {
+          link.classList.add('active');
+        }
+      });
+      return;
+    }
+
     this.sections.forEach((section) => {
       const top = section.offsetTop;
       const height = section.offsetHeight;
