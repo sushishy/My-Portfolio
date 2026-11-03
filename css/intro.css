@@ -1068,3 +1068,76 @@ html.light-theme .editorial-theme-toggle:hover {
     grid-template-columns: 1fr;
   }
 }
+
+/* 
+================================================================================
+         CINEMATIC SCROLL PROGRESS & INTERACTIVE MOTION EFFECTS
+================================================================================
+*/
+
+/* Top Edge Scroll Progress Bar */
+.scroll-progress-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 2.5px;
+  width: 0%;
+  background: linear-gradient(90deg, #edeae4, #ffffff);
+  z-index: 9999;
+  pointer-events: none;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.4);
+  transition: width 0.08s linear;
+}
+
+html.light-theme .scroll-progress-bar {
+  background: linear-gradient(90deg, #101013, #27272a);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+/* 3D Hero Portrait Stage & Smooth Tilt */
+.hero-portrait-stage {
+  perspective: 1200px;
+  transform-style: preserve-3d;
+}
+
+.hero-portrait-card {
+  transform-style: preserve-3d;
+  transition: transform 0.2s cubic-bezier(0.2, 0, 0.2, 1), box-shadow 0.3s ease;
+  will-change: transform;
+}
+
+/* Interactive Cursor Spotlight on Project Cards */
+.work-timeline-card {
+  position: relative;
+  overflow: hidden;
+}
+
+.work-timeline-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(700px circle at var(--mouse-x, -1000px) var(--mouse-y, -1000px), rgba(255, 255, 255, 0.05), transparent 45%);
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  z-index: 1;
+}
+
+.work-timeline-card:hover::before {
+  opacity: 1;
+}
+
+html.light-theme .work-timeline-card::before {
+  background: radial-gradient(700px circle at var(--mouse-x, -1000px) var(--mouse-y, -1000px), rgba(0, 0, 0, 0.035), transparent 45%);
+}
+
+.work-card-info,
+.work-card-telemetry {
+  position: relative;
+  z-index: 2;
+}
+
+/* Pull quote statement animation ease */
+.pull-quote-statement {
+  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.6s ease;
+}

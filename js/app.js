@@ -168,7 +168,6 @@ class ScrollSpy {
   }
 
   bindActionButtons() {
-    // Also bind hero buttons (e.g., 'View Selected Work', 'Initiate Contact')
     const actionLinks = document.querySelectorAll('.hero-actions-row a[href^="#"]');
     actionLinks.forEach((btn) => {
       btn.addEventListener('click', (e) => {
@@ -239,12 +238,369 @@ class ScrollSpy {
       if (rect.top <= triggerLine) {
         currentActiveId = this.sectionData[i].id;
       } else {
-        // Sections are positioned sequentially in DOM
         break;
       }
     }
 
     this.setActive(currentActiveId);
+  }
+}
+
+/* 
+================================================================================
+            CINEMATIC MOTION & SCROLL REVEAL ENGINE
+            Powered by GSAP & ScrollTrigger with Anime.js v4 Fallback
+================================================================================
+*/
+class MotionController {
+  constructor() {
+    this.hasGSAP = typeof window.gsap !== 'undefined' && typeof window.ScrollTrigger !== 'undefined';
+    this.hasAnime = typeof window.anime !== 'undefined';
+  }
+
+  init() {
+    this.initScrollProgress();
+    this.initSpotlightHover();
+    this.initPortraitTilt();
+
+    if (this.hasGSAP) {
+      this.initGSAPMotions();
+    } else {
+      this.initObserverMotions();
+    }
+  }
+
+  initScrollProgress() {
+    const bar = document.getElementById('scroll-progress-bar');
+    if (!bar) return;
+
+    window.addEventListener('scroll', () => {
+      const scrollY = window.pageYOffset || window.scrollY || 0;
+      const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+      const progress = docHeight > 0 ? (scrollY / docHeight) * 100 : 0;
+      bar.style.width = `${progress}%`;
+    }, { passive: true });
+  }
+
+  initPortraitTilt() {
+    const stage = document.querySelector('.hero-portrait-stage');
+    const card = document.querySelector('.hero-portrait-card');
+    if (!stage || !card) return;
+
+    stage.addEventListener('mousemove', (e) => {
+      const rect = stage.getBoundingClientRect();
+      const x = e.clientX - rect.left;
+      const y = e.clientY - rect.top;
+      const centerX = rect.width / 2;
+      const centerY = rect.height / 2;
+
+      const rotateX = ((y - centerY) / centerY) * -6;
+      const rotateY = ((x - centerX) / centerX) * 6;
+
+      card.style.transform = `perspective(1000px) rotateX(${rotateX.toFixed(2)}deg) rotateY(${rotateY.toFixed(2)}deg) scale3d(1.02, 1.02, 1.02)`;
+    });
+
+    stage.addEventListener('mouseleave', () => {
+      card.style.transform = 'perspective(1000px) rotateX(0deg) rotateY(0deg) scale3d(1, 1, 1)';
+    });
+  }
+
+  initSpotlightHover() {
+    const cards = document.querySelectorAll('.work-timeline-card');
+    cards.forEach((card) => {
+      card.addEventListener('mousemove', (e) => {
+        const rect = card.getBoundingClientRect();
+        const x = e.clientX - rect.left;
+        const y = e.clientY - rect.top;
+        card.style.setProperty('--mouse-x', `${x}px`);
+        card.style.setProperty('--mouse-y', `${y}px`);
+      });
+    });
+  }
+
+  initGSAPMotions() {
+    const gsap = window.gsap;
+    const ScrollTrigger = window.ScrollTrigger;
+    gsap.registerPlugin(ScrollTrigger);
+
+    // 1. Hero Entrance Sequence
+    const nameSpans = document.querySelectorAll('.hero-name-stacked span');
+    const bio = document.querySelector('.hero-editorial-bio');
+    const actions = document.querySelector('.hero-actions-row');
+    const portrait = document.querySelector('.hero-portrait-card');
+    const caption = document.querySelector('.hero-portrait-caption');
+
+    const heroTl = gsap.timeline({ defaults: { ease: 'power3.out' } });
+
+    if (nameSpans.length) {
+      heroTl.from(nameSpans, {
+        y: 50,
+        opacity: 0,
+        stagger: 0.12,
+        duration: 1.0,
+        clearProps: 'transform,opacity'
+      });
+    }
+
+    if (bio) {
+      heroTl.from(bio, {
+        y: 24,
+        opacity: 0,
+        duration: 0.85,
+        clearProps: 'transform,opacity'
+      }, '-=0.65');
+    }
+
+    if (actions && actions.children.length) {
+      heroTl.from(actions.children, {
+        y: 20,
+        opacity: 0,
+        stagger: 0.1,
+        duration: 0.75,
+        clearProps: 'transform,opacity'
+      }, '-=0.55');
+    }
+
+    if (portrait) {
+      heroTl.from(portrait, {
+        scale: 0.95,
+        y: 35,
+        opacity: 0,
+        duration: 1.1,
+        clearProps: 'opacity'
+      }, '-=0.8');
+    }
+
+    if (caption) {
+      heroTl.from(caption, {
+        opacity: 0,
+        duration: 0.8,
+        clearProps: 'opacity'
+      }, '-=0.5');
+    }
+
+    // 2. Section Headers (Active on both scroll down & scroll up!)
+    gsap.utils.toArray('.section-label-header').forEach((header) => {
+      gsap.fromTo(header,
+        { opacity: 0, y: 24 },
+        {
+          opacity: 1,
+          y: 0,
+          duration: 0.8,
+          ease: 'power3.out',
+          scrollTrigger: {
+            trigger: header,
+            start: 'top 88%',
+            toggleActions: 'play none none reverse'
+          }
+        }
+      );
+    });
+
+    // 3. Editorial Split Grids (About & Systems Lab)
+    gsap.utils.toArray('.editorial-split-grid').forEach((grid) => {
+      const photo = grid.querySelector('.editorial-photo-box');
+      const textFlow = grid.querySelector('.editorial-text-flow');
+
+      if (photo) {
+        gsap.fromTo(photo,
+          { opacity: 0, y: 35, scale: 0.97 },
+          {
+            opacity: 1,
+            y: 0,
+            scale: 1,
+            duration: 1.0,
+            ease: 'power3.out',
+            scrollTrigger: {
+              trigger: grid,
+              start: 'top 82%',
+              toggleActions: 'play none none reverse'
+            }
+          }
+        );
+      }
+
+      if (textFlow) {
+        gsap.fromTo(textFlow,
+          { opacity: 0, y: 30 },
+          {
+            opacity: 1,
+            y: 0,
+            duration: 1.0,
+            ease: 'power3.out',
+            scrollTrigger: {
+              trigger: grid,
+              start: 'top 82%',
+              toggleActions: 'play none none reverse'
+            }
+          }
+        );
+      }
+    });
+
+    // 4. Pull Quote Section
+    const pullQuote = document.querySelector('.pull-quote-section');
+    if (pullQuote) {
+      const statement = pullQuote.querySelector('.pull-quote-statement');
+      const sub = pullQuote.querySelector('.pull-quote-sub');
+      if (statement) {
+        gsap.fromTo(statement,
+          { opacity: 0, scale: 0.96, y: 28 },
+          {
+            opacity: 1,
+            scale: 1,
+            y: 0,
+            duration: 1.1,
+            ease: 'power3.out',
+            scrollTrigger: {
+              trigger: pullQuote,
+              start: 'top 80%',
+              toggleActions: 'play none none reverse'
+            }
+          }
+        );
+      }
+      if (sub) {
+        gsap.fromTo(sub,
+          { opacity: 0 },
+          {
+            opacity: 1,
+            duration: 0.8,
+            ease: 'power2.out',
+            scrollTrigger: {
+              trigger: pullQuote,
+              start: 'top 78%',
+              toggleActions: 'play none none reverse'
+            }
+          }
+        );
+      }
+    }
+
+    // 5. Skills Capability Cards (Cascading Wave Stagger)
+    const skillsList = document.querySelector('.skills-capabilities-list');
+    if (skillsList) {
+      const items = skillsList.querySelectorAll('.skills-atelier-item');
+      gsap.fromTo(items,
+        { opacity: 0, y: 35 },
+        {
+          opacity: 1,
+          y: 0,
+          stagger: 0.12,
+          duration: 0.85,
+          ease: 'power3.out',
+          scrollTrigger: {
+            trigger: skillsList,
+            start: 'top 84%',
+            toggleActions: 'play none none reverse'
+          }
+        }
+      );
+    }
+
+    // 6. Work Project Cards (The 3 Dashboards)
+    gsap.utils.toArray('.work-timeline-card').forEach((card) => {
+      const info = card.querySelector('.work-card-info');
+      const telemetry = card.querySelector('.work-card-telemetry');
+
+      const cardTl = gsap.timeline({
+        scrollTrigger: {
+          trigger: card,
+          start: 'top 84%',
+          toggleActions: 'play none none reverse'
+        }
+      });
+
+      cardTl.fromTo(card,
+        { opacity: 0, y: 45 },
+        { opacity: 1, y: 0, duration: 0.9, ease: 'power3.out' }
+      );
+
+      if (info && info.children.length) {
+        cardTl.fromTo(info.children,
+          { opacity: 0, y: 18 },
+          { opacity: 1, y: 0, stagger: 0.08, duration: 0.6, ease: 'power2.out' },
+          '-=0.65'
+        );
+      }
+
+      if (telemetry) {
+        cardTl.fromTo(telemetry,
+          { opacity: 0, scale: 0.97, y: 20 },
+          { opacity: 1, scale: 1, y: 0, duration: 0.8, ease: 'power3.out' },
+          '-=0.55'
+        );
+      }
+    });
+
+    // 7. Education Cards
+    const eduGrid = document.querySelector('.education-grid');
+    if (eduGrid) {
+      gsap.fromTo(eduGrid.children,
+        { opacity: 0, y: 30 },
+        {
+          opacity: 1,
+          y: 0,
+          stagger: 0.14,
+          duration: 0.8,
+          ease: 'power3.out',
+          scrollTrigger: {
+            trigger: eduGrid,
+            start: 'top 85%',
+            toggleActions: 'play none none reverse'
+          }
+        }
+      );
+    }
+
+    // 8. Contact Section Tiles
+    const contactGrid = document.querySelector('.contact-tiles-grid');
+    if (contactGrid) {
+      gsap.fromTo(contactGrid.children,
+        { opacity: 0, y: 28, scale: 0.98 },
+        {
+          opacity: 1,
+          y: 0,
+          scale: 1,
+          stagger: 0.12,
+          duration: 0.75,
+          ease: 'power3.out',
+          scrollTrigger: {
+            trigger: contactGrid,
+            start: 'top 88%',
+            toggleActions: 'play none none reverse'
+          }
+        }
+      );
+    }
+  }
+
+  initObserverMotions() {
+    const elementsToReveal = document.querySelectorAll(
+      '.section-label-header, .editorial-split-grid, .pull-quote-section, .skills-atelier-item, .work-timeline-card, .education-card, .contact-editorial-tile'
+    );
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.style.opacity = '1';
+          entry.target.style.transform = 'translateY(0) scale(1)';
+          entry.target.style.transition = 'opacity 0.85s cubic-bezier(0.16, 1, 0.3, 1), transform 0.85s cubic-bezier(0.16, 1, 0.3, 1)';
+        } else {
+          entry.target.style.opacity = '0';
+          entry.target.style.transform = 'translateY(32px) scale(0.98)';
+        }
+      });
+    }, {
+      threshold: 0.12,
+      rootMargin: '0px 0px -50px 0px'
+    });
+
+    elementsToReveal.forEach((el) => {
+      el.style.opacity = '0';
+      el.style.transform = 'translateY(32px) scale(0.98)';
+      observer.observe(el);
+    });
   }
 }
 
@@ -281,6 +637,7 @@ class PortfolioApp {
   constructor() {
     this.themeManager = new ThemeManager();
     this.scrollSpy = new ScrollSpy();
+    this.motionController = new MotionController();
     this.skeletonManager = new SkeletonManager();
   }
 
@@ -295,6 +652,12 @@ class PortfolioApp {
       this.scrollSpy.init();
     } catch (e) {
       console.warn('ScrollSpy init error:', e);
+    }
+
+    try {
+      this.motionController.init();
+    } catch (e) {
+      console.warn('MotionController init error:', e);
     }
 
     try {
@@ -321,9 +684,10 @@ if (document.readyState === 'loading') {
 if (typeof window !== 'undefined') {
   window.ThemeManager = ThemeManager;
   window.ScrollSpy = ScrollSpy;
+  window.MotionController = MotionController;
   window.SkeletonManager = SkeletonManager;
   window.PortfolioApp = PortfolioApp;
 }
 if (typeof module !== 'undefined' && module.exports) {
-  module.exports = { ThemeManager, ScrollSpy, SkeletonManager, PortfolioApp };
+  module.exports = { ThemeManager, ScrollSpy, MotionController, SkeletonManager, PortfolioApp };
 }
