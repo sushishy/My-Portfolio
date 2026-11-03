@@ -1221,7 +1221,7 @@ html.light-theme .work-timeline-card::before {
   color: var(--text-primary);
   letter-spacing: -0.5px;
   text-align: center;
-  margin: 0;
+  margin: 0 0 32px 0;
   line-height: 1.1;
   opacity: 0;
   transform: translateY(10px);

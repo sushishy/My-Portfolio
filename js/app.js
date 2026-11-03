@@ -641,7 +641,7 @@ class SkeletonManager {
 */
 class LaunchLoader {
   constructor(options = {}) {
-    this.totalMs = options.totalMs || 2400;
+    this.totalMs = options.totalMs || 5000;
     this.fadeoutMs = options.fadeoutMs || 650;
     this.overlay = document.getElementById('app-launch-loader');
     this.fill = document.getElementById('launch-progress-fill');
@@ -649,12 +649,11 @@ class LaunchLoader {
     this.statusEl = document.getElementById('launch-status-text');
 
     this.msgs = [
-      'Initializing portfolio core...',
-      'Mounting architectural layout...',
-      'Loading business intelligence telemetry...',
-      'Synchronizing relational schema engines...',
-      'Calibrating interactive motion vectors...',
-      'Systems ready.'
+      'Loading portfolio...',
+      'Preparing showcase & projects...',
+      'Loading visual media...',
+      'Finalizing layout...',
+      'Welcome.'
     ];
 
     this.onComplete = options.onComplete || null;
@@ -768,7 +767,7 @@ class PortfolioApp {
     }
 
     const loader = new LaunchLoader({
-      totalMs: 2400,
+      totalMs: 5000,
       onComplete: () => {
         try {
           this.motionController.init();
