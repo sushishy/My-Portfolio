@@ -884,29 +884,44 @@ html.light-theme .intro-wrapper::before {
 
 /* 
 ================================================================================
-   LIGHT THEME BUTTONS: WHITE BACKGROUND + 1PX SOLID BLACK BORDER
+   HERO BUTTONS (LIGHT THEME): WHITE BACKGROUND + 1PX SOLID BLACK BORDER
 ================================================================================
 */
-html.light-theme .btn-primary-pill,
-html.light-theme .btn-secondary-pill {
+html.light-theme .hero-actions-row .btn-primary-pill,
+html.light-theme .hero-actions-row .btn-secondary-pill {
   background-color: #ffffff;
   color: #000000;
   border: 1px solid #000000;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06);
 }
 
-html.light-theme .btn-primary-pill span,
-html.light-theme .btn-secondary-pill span {
+html.light-theme .hero-actions-row .btn-primary-pill span,
+html.light-theme .hero-actions-row .btn-secondary-pill span {
   color: #000000;
 }
 
-html.light-theme .btn-primary-pill:hover,
-html.light-theme .btn-secondary-pill:hover {
+html.light-theme .hero-actions-row .btn-primary-pill:hover,
+html.light-theme .hero-actions-row .btn-secondary-pill:hover {
   background-color: #f4f4f0;
   color: #000000;
   border-color: #000000;
   transform: translateY(-2px);
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+/* Project card buttons: understated outline so we don't overdo white boxes */
+html.light-theme .work-card-actions .btn-secondary-pill {
+  background-color: transparent;
+  color: #101013;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  box-shadow: none;
+}
+
+html.light-theme .work-card-actions .btn-secondary-pill:hover {
+  background-color: rgba(0, 0, 0, 0.04);
+  border-color: #000000;
+  color: #000000;
+  transform: translateY(-2px);
 }
 
 html.light-theme .antonio-theme-toggle {
